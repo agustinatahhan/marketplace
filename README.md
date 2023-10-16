@@ -25,3 +25,24 @@
 [Puma](https://ar.puma.com/?utm_source=GGL&utm_medium=BS&gclid=CjwKCAjwvrOpBhBdEiwAR58-3Lr7blacKIRkMsfiX-XrH6GjauSPibyfsrf1RacUq-y5mbVmQTQZYBoCPE4QAvD_BwE "Puma")
 <br>
 [Paruolo](https://www.paruolo.com.ar/anticipo-ss24.html?gclid=CjwKCAjwvrOpBhBdEiwAR58-3N3wsdJQ1SM3-6S2ftg2YpRFIzvrdYhL_eZT7-zPWnHxq0J9hcRqHRoCwBAQAvD_BwE "Paruolo")
+
+####Wireframes:
+###### Home:
+[![Home](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Home_usdg4u.png "Home")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Home_usdg4u.png "Home")
+######Productos:
+[![Productos](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Productos_eqe4bc.png "Productos")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Productos_eqe4bc.png "Productos")
+###### Detalles del producto:
+[![Detalles producto](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Detalle_de_producto_byn9bd.png "Detalles producto")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Detalle_de_producto_byn9bd.png "Detalles producto")
+###### Carrito de compras:
+[![Carrito de compras](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Carrito_compras_wz05zl.png "Carrito de compras")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Carrito_compras_wz05zl.png "Carrito de compras")
+###### Inicio de sesión:
+[![Iniciar sesion](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Formulario_ingreso_x2u5ho.png "Iniciar sesion")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Formulario_ingreso_x2u5ho.png "Iniciar sesion")
+###### Crear cuenta:
+[![Crerar cuenta](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Crear_cuenta_msojqy.png "Crerar cuenta")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Crear_cuenta_msojqy.png "Crerar cuenta")
+###### Vista mobile:
+[![mobile](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_1_jz3gbf.png "mobile")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_1_jz3gbf.png "mobile")
+[![mobile2](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_2_qgzcfd.png "mobile2")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_2_qgzcfd.png "mobile2")
+
+#### Logo:
+
+[![Logo](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")
