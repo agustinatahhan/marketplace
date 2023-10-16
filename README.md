@@ -15,7 +15,7 @@
 💻 Francisco Trouve
 <br>
 
-#### Links de referencia:
+### Links de referencia:
 [Adidas](https://www.adidas.com.ar/?cm_mmc=AdieSEM_Google-_-Trademark-adidas-General-B-Exact-_-Trademark-adidas-X-General-_-adidas-_--_-dv:eCom-_-cm_mmca1=AR-_-cm_mmc2=&-_-ds_kid=43700041731365975-_-&-_-ds_agid=58700004850253847&af_reengagement_window=30d&is_retargeting=true&pid=googleadwords_temp&c=Trademark-adidas-General-B-Exact&af_channel=Search&&&gclid=CjwKCAjwvrOpBhBdEiwAR58-3PRTL61KHFiGOTVGJ8LFmZb_a9s5fRPWP0lIN5Awthn5FBdHOYY0oxoCZ9EQAvD_BwE&gclsrc=aw.ds "Adidas")
 <br>
 [Nike](https://www.nike.com.ar/?gclid=CjwKCAjwvrOpBhBdEiwAR58-3E6xRWSEakTeiPDNPiBgV6oAbpJMKTF_Cif6rtMoEodI9fdqWBc-LxoCh3QQAvD_BwE "Nike")
@@ -26,23 +26,23 @@
 <br>
 [Paruolo](https://www.paruolo.com.ar/anticipo-ss24.html?gclid=CjwKCAjwvrOpBhBdEiwAR58-3N3wsdJQ1SM3-6S2ftg2YpRFIzvrdYhL_eZT7-zPWnHxq0J9hcRqHRoCwBAQAvD_BwE "Paruolo")
 
-####Wireframes:
-###### Home:
+### Wireframes:
+##### Home:
 [![Home](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Home_usdg4u.png "Home")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Home_usdg4u.png "Home")
-######Productos:
+##### Productos:
 [![Productos](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Productos_eqe4bc.png "Productos")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Productos_eqe4bc.png "Productos")
-###### Detalles del producto:
+##### Detalles del producto:
 [![Detalles producto](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Detalle_de_producto_byn9bd.png "Detalles producto")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Detalle_de_producto_byn9bd.png "Detalles producto")
-###### Carrito de compras:
+##### Carrito de compras:
 [![Carrito de compras](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Carrito_compras_wz05zl.png "Carrito de compras")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Carrito_compras_wz05zl.png "Carrito de compras")
-###### Inicio de sesión:
+##### Inicio de sesión:
 [![Iniciar sesion](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Formulario_ingreso_x2u5ho.png "Iniciar sesion")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Formulario_ingreso_x2u5ho.png "Iniciar sesion")
-###### Crear cuenta:
+##### Crear cuenta:
 [![Crerar cuenta](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Crear_cuenta_msojqy.png "Crerar cuenta")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Crear_cuenta_msojqy.png "Crerar cuenta")
-###### Vista mobile:
+##### Vista mobile:
 [![mobile](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_1_jz3gbf.png "mobile")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_1_jz3gbf.png "mobile")
 [![mobile2](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_2_qgzcfd.png "mobile2")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_2_qgzcfd.png "mobile2")
 
-#### Logo:
+### Logo:
 
 [![Logo](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")
