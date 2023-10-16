@@ -32,7 +32,7 @@
 ##### Productos:
 [![Productos](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Productos_eqe4bc.png "Productos")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Productos_eqe4bc.png "Productos")
 ##### Detalles del producto:
-[![Detalles producto](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Detalle_de_producto_byn9bd.png "Detalles producto")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Detalle_de_producto_byn9bd.png "Detalles producto")
+[![Detalles del producto](https://res.cloudinary.com/dojqllm76/image/upload/v1697500115/Marketplace-digitalhouse/Detalle_de_producto_1_y3r3es.png "Detalles del producto")](https://res.cloudinary.com/dojqllm76/image/upload/v1697500115/Marketplace-digitalhouse/Detalle_de_producto_1_y3r3es.png "Detalles del producto")
 ##### Carrito de compras:
 [![Carrito de compras](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Carrito_compras_wz05zl.png "Carrito de compras")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498954/Marketplace-digitalhouse/Carrito_compras_wz05zl.png "Carrito de compras")
 ##### Inicio de sesión:
