@@ -12,7 +12,7 @@
 <br>
 💻 Daniel Brandan - 35 años - <strong> [@dhanbrandan](https://github.com/DhanBrandan "@dhanbrandan")</strong>
 <br>
-💻 Francisco Trouve
+💻 Francisco Trouve - 25 años - <strong> [@frantrouve](https://github.com/frantrouve "@frantrouve")</strong>
 <br>
 
 ### Links de referencia:
@@ -46,3 +46,14 @@
 ### Logo:
 
 [![Logo](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")
+
+#### Paletas de colores:
+###### Opción 1:
+[![Marrones](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Natural_Color_Palettes_Inspirations_-_Sienna_ogjre0.jpg "Marrones")](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Natural_Color_Palettes_Inspirations_-_Sienna_ogjre0.jpg "Marrones")
+
+###### Opción 2:
+[![Colorida](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Our_top_tips_for_choosing_your_brand_s_new_colour_palette_Studio_Pie___Joyful_Branding_and_Web_Design_rnssqw.jpg "Colorida")](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Our_top_tips_for_choosing_your_brand_s_new_colour_palette_Studio_Pie___Joyful_Branding_and_Web_Design_rnssqw.jpg "Colorida")
+
+#### Fuentes:
+DM Sans - Regular 400.
+Bebas Neue - Regular 400.
