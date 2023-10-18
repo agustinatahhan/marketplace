@@ -47,14 +47,14 @@
 
 [![Logo](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")
 
-#### Paletas de colores:
+### Paletas de colores:
 ###### Opción 1:
 [![Marrones](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Natural_Color_Palettes_Inspirations_-_Sienna_ogjre0.jpg "Marrones")](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Natural_Color_Palettes_Inspirations_-_Sienna_ogjre0.jpg "Marrones")
 
 ###### Opción 2:
 [![Colorida](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Our_top_tips_for_choosing_your_brand_s_new_colour_palette_Studio_Pie___Joyful_Branding_and_Web_Design_rnssqw.jpg "Colorida")](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Our_top_tips_for_choosing_your_brand_s_new_colour_palette_Studio_Pie___Joyful_Branding_and_Web_Design_rnssqw.jpg "Colorida")
 
-#### Fuentes:
+### Fuentes:
 DM Sans - Regular 400.
 <br>
 Bebas Neue - Regular 400.
