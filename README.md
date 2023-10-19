@@ -44,9 +44,11 @@
 [![mobile2](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_2_qgzcfd.png "mobile2")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498955/Marketplace-digitalhouse/Wireframe_-_2_qgzcfd.png "mobile2")
 
 ### Logo:
-
+###### Logo 1
 [![Logo](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")](https://res.cloudinary.com/dojqllm76/image/upload/v1697498400/Logo_Marketplace_y6gbed.png "Logo")
 
+###### Logo 2
+[![logo2](https://res.cloudinary.com/dojqllm76/image/upload/v1697729093/Marketplace-digitalhouse/Black_And_White_Minimalist_Milk_Creative_Studio_Logo_wcnryx.png "logo2")](https://res.cloudinary.com/dojqllm76/image/upload/v1697729093/Marketplace-digitalhouse/Black_And_White_Minimalist_Milk_Creative_Studio_Logo_wcnryx.png "logo2")
 ### Paletas de colores:
 ###### Opción 1:
 [![Marrones](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Natural_Color_Palettes_Inspirations_-_Sienna_ogjre0.jpg "Marrones")](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Natural_Color_Palettes_Inspirations_-_Sienna_ogjre0.jpg "Marrones")
@@ -54,6 +56,8 @@
 ###### Opción 2:
 [![Colorida](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Our_top_tips_for_choosing_your_brand_s_new_colour_palette_Studio_Pie___Joyful_Branding_and_Web_Design_rnssqw.jpg "Colorida")](https://res.cloudinary.com/dojqllm76/image/upload/v1697639154/Marketplace-digitalhouse/Our_top_tips_for_choosing_your_brand_s_new_colour_palette_Studio_Pie___Joyful_Branding_and_Web_Design_rnssqw.jpg "Colorida")
 
+###### Opción 3:
+[![opcion](https://res.cloudinary.com/dojqllm76/image/upload/v1697729092/Marketplace-digitalhouse/Fresh_Extravagant_Color_Palette_for_360_Condo_Project_by_Allison_Jaffe_abesfy.jpg "opcion")](https://res.cloudinary.com/dojqllm76/image/upload/v1697729092/Marketplace-digitalhouse/Fresh_Extravagant_Color_Palette_for_360_Condo_Project_by_Allison_Jaffe_abesfy.jpg "opcion")
 ### Fuentes:
 DM Sans - Regular 400.
 <br>
