@@ -1,0 +1,123 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    background: #d1b292;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 6rem;
+}
+
+.navbar input{
+    width: 20rem;
+    height: 2rem;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.logo{
+    width: 7rem;
+    height: 7rem;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 4rem;
+}
+
+.logoFooter{
+    width: 10rem;
+    height: 10rem;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi', sans-serif;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    background: #d1b292;
+}
+
+.main-content {
+    margin-top: 6rem; /* Ajusta el margen superior para dejar espacio para el encabezado fijo */
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 6rem;
+}
+
+.navbar input {
+    width: 20rem;
+    height: 2rem;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.logo {
+    width: 7rem;
+    height: 7rem;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerFlex {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 9rem;
+    background: #d1b292;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem; /* Agrega un relleno para el contenido del footer */
+}
+
+.logoFooter {
+    width: 10rem;
+    height: 10rem;
+}
+
+li{
+    list-style: none;
+}
