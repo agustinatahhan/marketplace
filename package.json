@@ -1,0 +1,19 @@
+{
+  "name": "marketplace",
+  "version": "1.0.0",
+  "description": "💻 Agustina Tahhan - 28 años - <strong>[@agustahhan](https://github.com/agustinatahhan \"@agustahhan\")</strong>\r <br>\r 💻 Nicolás Barquin - 28 años - <strong>[@nicolasbarquin](https://github.com/NicolasBarquin \"@nicolasbarquin\")</strong>\r <br>\r 💻 Stella Maris Correa Camus - 44 años - <strong>[@st1979](https://github.com/st1979 \"@st1979\")</strong>\r <br>\r 💻 Esteban Trejo - 25 años - <strong>[@estebantrejo](https://github.com/EstebanTrejo \"@estebantrejo\")</strong>\r <br>\r 💻 Matías Herrera - 26 años - <strong>[@matiassilvaareal](https://github.com/MatiasSilvaAreal \"@matiassilvaareal\")</strong>\r <br>\r 💻 Daniel Brandan - 35 años - <strong> [@dhanbrandan](https://github.com/DhanBrandan \"@dhanbrandan\")</strong>\r <br>\r 💻 Francisco Trouve - 25 años - <strong> [@frantrouve](https://github.com/frantrouve \"@frantrouve\")</strong>\r <br>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
