@@ -114,6 +114,10 @@ nav {
     
 }
 
+.footerFlex a:hover {
+    color: white;
+    text-decoration: underline;
+}
 
 .logoFooter {
     width: 10rem;
