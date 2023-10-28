@@ -111,7 +111,9 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 4rem; /* Agrega un relleno para el contenido del footer */
+    
 }
+
 
 .logoFooter {
     width: 10rem;
@@ -121,3 +123,67 @@ nav {
 li{
     list-style: none;
 }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------INICIO FORM REGISTER------------------------------- */
+.form-register {
+    width: 400px;
+    background: #d1b292;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    box-shadow: 7px 13px 37px #000000;
+}
+
+.form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.ctrl {
+    width: 100%;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    box-shadow: 7px 13px 37px #977e64;
+}
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+}
+.form-register a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+
+}.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+
+}.form-register .btn {
+    width: 100%;
+    background: #030f29;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family: 'Satoshi', sans-serif;
+}
+/* ------------------------FIN FORM REGISTER--------------------------------- */
