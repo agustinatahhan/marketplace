@@ -1,193 +1,234 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-nav{
-    position: fixed;
-    width: 100%;
-    height: 6rem;
-    background: #d1b292;
-}
-
-.navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 6rem;
-}
-
-.navbar input{
-    width: 20rem;
-    height: 2rem;
-    border: none;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.logo{
-    width: 7rem;
-    height: 7rem;
-}
-
-.icons{
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.footerFlex{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 4rem;
-}
-
-.logoFooter{
-    width: 10rem;
-    height: 10rem;
-} */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Satoshi', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", sans-serif;
 }
 
-nav {
-    /* position: fixed; */ /* Lo comenté porque sino no visualizo el main */
-    width: 100%;
-    height: 6rem;
-    background: #d1b292;
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .main-content {
-    margin-top: 6rem; /* Ajusta el margen superior para dejar espacio para el encabezado fijo */
+  margin-top: 6rem;
+}
+
+/* ------------------------INICIO NAV------------------------------- */
+nav {
+  width: 100%;
+  height: 6rem;
+  background: #d1b292;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 6rem;
-}
-
-.navbar input {
-    width: 20rem;
-    height: 2rem;
-    border: none;
-    text-align: center;
-    border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .logo {
-    width: 7rem;
-    height: 7rem;
+  width: 5rem;
+  height: 4rem;
+  margin-right: 15rem;
+}
+
+.inputSearch {
+  position: relative;
+}
+
+.inputSearch input {
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.inputSearch input::placeholder {
+  letter-spacing: 2px;
+}
+
+.inputSearch .lupa {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 3%;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icons {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-left: 15rem;
+  cursor: pointer;
 }
+.icons svg {
+  transition: transform 0.3s ease;
+}
+
+.icons svg:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .icons {
+    gap: 1rem;
+    margin-left: 3rem;
+  }
+
+  .logo {
+    margin-right: 3rem;
+  }
+
+  .inputSearch {
+    display: none;
+  }
+
+  .inputSearch .lupa {
+    display: none;
+  }
+  .navbar input {
+    display: none;
+  }
+}
+
+/* ------------------------FIN NAV------------------------------- */
+
+/* ------------------------INICIO FOOTER------------------------------- */
 
 .footerFlex {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 9rem;
-    background: #d1b292;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 4rem; /* Agrega un relleno para el contenido del footer */
-    
-}
-
-.footerFlex a:hover {
-    color: white;
-    text-decoration: underline;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 9rem;
+  background: #d1b292;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
 }
 
 .logoFooter {
-    width: 10rem;
-    height: 10rem;
+  width: 9rem;
+  height: 6rem;
 }
 
-li{
-    list-style: none;
+.iconsFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  cursor: pointer;
 }
 
+.iconsFooter svg {
+  transition: transform 0.3s ease;
+}
 
-* {
+.iconsFooter svg:hover {
+  transform: scale(1.2);
+}
+
+.copyright {
+  font-weight: 400;
+}
+
+.infoFooter ul li a:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .copyright {
+    display: none;
+  }
+
+  .logoFooter {
+    display: none;
+  }
+  .iconsFooter {
+    gap: 1rem;
+    justify-content: center;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  }
+
+  .infoFooter {
+    display: none;
+  }
 }
+
+/* ------------------------FIN FOOTER------------------------------- */
 
 /* ------------------------INICIO FORM REGISTER------------------------------- */
 .form-register {
-    width: 400px;
-    background: #d1b292;
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 20px;
-    font-family: 'Satoshi', sans-serif;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    box-shadow: 7px 13px 37px #000000;
+  width: 400px;
+  background: #d1b292;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 20px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  box-shadow: 7px 13px 37px #000000;
 }
 
 .form-register h4 {
-    font-size: 22px;
-    margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 .ctrl {
-    width: 100%;
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border-radius: 10px;
-    font-family: 'Satoshi', sans-serif;
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    box-shadow: 7px 13px 37px #977e64;
+  width: 100%;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  font-family: "Satoshi", sans-serif;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  box-shadow: 7px 13px 37px #977e64;
 }
 .form-register p {
-    height: 40px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
 }
 .form-register a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-
-}.form-register a:hover {
-    color: white;
-    text-decoration: underline;
-
-}.form-register .btn {
-    width: 100%;
-    background: #030f29;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
-    font-size: 16px;
-    border-radius: 10px;
-    font-family: 'Satoshi', sans-serif;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.form-register .btn {
+  width: 100%;
+  background: #030f29;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  font-family: "Satoshi", sans-serif;
 }
 /* ------------------------FIN FORM REGISTER--------------------------------- */
