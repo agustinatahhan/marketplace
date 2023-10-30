@@ -36,9 +36,6 @@ main {
   padding-bottom: 7rem;
 }
 
-.main-content {
-  margin-top: 6rem;
-}
 
 /* ------------------------INICIO NAV------------------------------- */
 nav {
@@ -221,12 +218,13 @@ nav {
 .ctrl {
   width: 100%;
   background: #ffffff;
+  border: none;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
   border-radius: 10px;
   font-family: "Satoshi", sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   color: rgb(0, 0, 0);
   box-shadow: 7px 13px 37px #977e64;
 }
@@ -245,7 +243,6 @@ nav {
 
 .form-register a:hover {
   color: white;
-  text-decoration: underline;
 }
 
 .form-register .btn {
@@ -478,3 +475,4 @@ h6 {
 }
 
 /* ------------------------FIN CARROUSEL----------------------------- */
+
