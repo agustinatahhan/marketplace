@@ -104,8 +104,52 @@
     </nav>
   </header>
   <main>
-    <h2>Product detail</h2>
+    <div class="main">
+      <!--inicio del div mini-->
+      <div class="miniatura">
+        <div class="img-mini"></div>
+        <div class="img-mini"></div>
+        <div class="img-mini"></div>
+        <div class="img-mini"></div>
+      </div>
+      <!--fin del div mini-->
+
+      <!--inicio del div principal-->
+      <div class="principal">
+        <img class="img-principal" src="img/ropadetalle.jpeg" alt="imagenprincipal">
+        <p>descripcion: conjunto de tela marron y blanco para salir a darsela en la pera nashe</p>
+      </div>
+      <!--fin del div principal-->
+
+      <!--inicio del div detalles-->
+      <div class="detalles">
+        <p>nombre del producto: nombre</p>
+        <p>precio : $30000</p>
+        <form action="">
+          <label for="cantidad">cantidad</label>
+          <input type="number" name="" id="">
+          <div class="button-container">
+            <button class="custom-button">S</button>
+            <button class="custom-button">M</button>
+            <button class="custom-button">L</button>
+            <button class="custom-button">XL</button>
+          </div>
+          <!--promociones bancarias-->
+          <div class="promociones">
+            <div class="promocion">
+              <h3>Promociones Bancarias <i class="fa-solid fa-credit-card"></i></h3>
+              <p>3 cuotas fijas de $50000</p>
+              <p>6 cuotas fijas de $40000</p>
+              <p>12 cuotas fijas de $30000</p>
+            </div>
+          </div>
+          <!--fin promociones bancarias-->
+            <button class="btn-carrito" type="submit">Agregar Al Carrito</button>
+        </form>
+      </div>
+    </div>
   </main>
+    <!--fin del div principal-->
   <footer class="footerFlex">
     <img src="/img/logo2.png" alt="logo" class="logoFooter" />
     <div class="infoFooter">
@@ -155,3 +199,11 @@
   </footer>
 </body>
 </html>
+
+<script>
+  function seleccionarTalle(talle) {
+    // Aquí puedes realizar acciones con el talle seleccionado, como enviarlo a un servidor o almacenarlo en una variable.
+    console.log('Talle seleccionado:', talle);
+    // También puedes resaltar el botón seleccionado, cambiar estilos, etc.
+  }
+</script>
