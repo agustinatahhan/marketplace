@@ -341,41 +341,23 @@ nav {
 
 /* ------------------------FIN CARRITO------------------------------- */
 .mainCarrousel {
+  width: 100%;
   margin: 0;
-  padding: 0;
-  font-family: "Satoshi", sans-serif;
+}
+.carrousel-list {
   display: flex;
-  height: 100vh;
-  width: 100%;
   align-items: center;
-}
-
-.mainCarrousel h4,
-h2,
-a,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-
-.carrousel {
+  justify-content: center;
   width: 100%;
-  margin: 8px 0px;
 }
-
-
-.carrousel h2 {
-  font-size: 45px;
-  line-height: 38px;
-  padding-bottom: 50px;
-  opacity: .9;
-  font-weight: 600;
-  text-align: center;
-  position: fixed;
-  margin-left: 680px;
-  margin-top: 60px;
-  color: rgb(0, 0, 0);
-}
+/* .carrousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 ;
+} */
 
 .carrousel h6 {
   font-size: 15px;
@@ -387,41 +369,31 @@ h6 {
   color: rgb(0, 0, 0);
 }
 
-.carrousel-list {
-  position: relative;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  width: fit-content;
-  height: 304px;
-  padding: 50px 0px;
-  margin: 100px auto;
-  max-width: 90vw;
-  margin-left: 70px;
-}
+
 
 .carrousel-track {
-  position: relative;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  transition: .5s ease-in-out;
+  /* transition: .5s ease-in-out; */
 }
 
 .carrousel {
-  position: relative;
-  width: 218px;
-  padding: 0px 18px;
-  float: left;
-  box-sizing: border-box;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 218px;
+  /* padding: 0px 18px; */
   height: 100%;
 }
 
 .carrousel h4 {
-  position: relative;
-  z-index: 1;
+  /* position: relative; */
+  /* z-index: 1; */
   font-size: 22px;
   line-height: 23px;
   color: rgb(0, 0, 0);
