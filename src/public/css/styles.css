@@ -18,7 +18,8 @@ a {
   color: black;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -30,9 +31,9 @@ body {
 }
 
 main {
-  flex: 1; 
+  flex: 1;
   padding-top: 6rem;
-  padding-bottom: 7rem; 
+  padding-bottom: 7rem;
 }
 
 .main-content {
@@ -100,6 +101,7 @@ nav {
   margin-left: 18rem;
   cursor: pointer;
 }
+
 .icons svg {
   transition: transform 0.3s ease;
 }
@@ -125,6 +127,7 @@ nav {
   .inputSearch .lupa {
     display: none;
   }
+
   .navbar input {
     display: none;
   }
@@ -183,6 +186,7 @@ nav {
   .logoFooter {
     display: none;
   }
+
   .iconsFooter {
     gap: 1rem;
     justify-content: center;
@@ -213,6 +217,7 @@ nav {
   font-size: 22px;
   margin-bottom: 20px;
 }
+
 .ctrl {
   width: 100%;
   background: #ffffff;
@@ -225,20 +230,24 @@ nav {
   color: rgb(0, 0, 0);
   box-shadow: 7px 13px 37px #977e64;
 }
+
 .form-register p {
   height: 40px;
   text-align: center;
   font-size: 14px;
   line-height: 40px;
 }
+
 .form-register a {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
+
 .form-register a:hover {
   color: white;
   text-decoration: underline;
 }
+
 .form-register .btn {
   width: 100%;
   background: #030f29;
@@ -250,6 +259,7 @@ nav {
   border-radius: 10px;
   font-family: "Satoshi", sans-serif;
 }
+
 /* ------------------------FIN FORM REGISTER--------------------------------- */
 
 /* ------------------------INICIO CARRITO------------------------------- */
@@ -333,3 +343,138 @@ nav {
 }
 
 /* ------------------------FIN CARRITO------------------------------- */
+.mainCarrousel {
+  margin: 0;
+  padding: 0;
+  font-family: "Satoshi", sans-serif;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+}
+
+.mainCarrousel h4,
+h2,
+a,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.carrousel {
+  width: 100%;
+  margin: 8px 0px;
+}
+
+
+.carrousel h2 {
+  font-size: 45px;
+  line-height: 38px;
+  padding-bottom: 50px;
+  opacity: .9;
+  font-weight: 600;
+  text-align: center;
+  position: fixed;
+  margin-left: 680px;
+  margin-top: 60px;
+  color: rgb(0, 0, 0);
+}
+
+.carrousel h6 {
+  font-size: 15px;
+  line-height: 7px;
+  padding-bottom: 8px;
+  opacity: .9;
+  font-weight: 300;
+  text-align: right;
+  color: rgb(0, 0, 0);
+}
+
+.carrousel-list {
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: fit-content;
+  height: 304px;
+  padding: 50px 0px;
+  margin: 100px auto;
+  max-width: 90vw;
+  margin-left: 70px;
+}
+
+.carrousel-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  transition: .5s ease-in-out;
+}
+
+.carrousel {
+  position: relative;
+  width: 218px;
+  padding: 0px 18px;
+  float: left;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+}
+
+.carrousel h4 {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  line-height: 23px;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+}
+
+.carrousel a img {
+  object-fit: cover;
+  height: 500px;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  transition: .3s ease-in-out;
+}
+
+@media(min-width:768px) {
+  .carrousel {
+    width: 275px;
+  }
+
+  .carrousel a img {
+    width: 250px;
+  }
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #241916;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 24px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: -60px;
+  bottom: -20px;
+}
+
+.right-arrow {
+  right: -100px;
+  bottom: -20px;
+}
+
+/* ------------------------FIN CARROUSEL----------------------------- */
