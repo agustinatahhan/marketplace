@@ -1,0 +1,106 @@
+/* --------------------- INICIO DEL DETALLE-----------------------------*/
+
+/*POSICIONAMIENTO DE LOS 3 DIVS */
+.main {
+    display: grid;
+    grid-template-columns: 20% 40% 40%; /* Distribución de columnas */
+    gap: 50px; /* Espacio entre las columnas */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: start; /* Centrar el contenido verticalmente */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    margin-left: 100px;
+  }
+  
+  .img-mini{
+    width: 96px;
+    height: 96px;
+    background-image: url('../img/mini.jpeg');
+    margin-bottom: 10px;
+  }
+  /*estilos para imagenes de la izquierda miniatura*/
+  /* .img-mini{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .img-principal{
+    width: 300px;
+  } */
+  
+  
+  /* Estilos para botones de talle x,s,l,XL*/
+  .custom-button {
+    padding: 10px 20px;
+    border: 2px solid #c2a14f; /* Color del borde */
+    border-radius: 10px; /* Radio para esquinas redondeadas */
+    background-color: #e0c992; /* Color de fondo */
+    color: #1e1e1e; /* Color del texto */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  /* Estilo para contenedor */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /*estilos para promociones bancarias*/
+  
+  /* Estilos para el contenedor de promociones */
+  .promociones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Estilos para cada promoción individual */
+  .promocion {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .promocion h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .detalles {
+    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Considerar los paddings en el ancho total */
+    background-color: #fff2c9; /* Color de fondo opcional */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .promociones {
+    max-width: 100%; /* Ajustar el ancho de las promociones */
+    margin-top: 20px; /* Espacio superior */
+  }
+  
+  .btn-carrito {
+    display: block;
+    width: 100%;
+    background-color: #030f29;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family: "Satoshi", sans-serif;
+  }
+  
+  /* Otros estilos permanecen iguales */
+  
+  
+  
+  
+  
+  /* --------------------- FIN DEL DETALLE-----------------------------*/

@@ -15,7 +15,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Marketplace</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Inicio de Sesion</title>
   </head>
 
   <body>
@@ -112,26 +113,31 @@
       </nav>
     </header>
     <main align="center" class="main-content">
-      <div class="box-login">
-        <h3>Iniciar Sesión</h3>
-        <p>
+      <section class="form-register">
+      <p>INICIAR SESIÓN</p>
+        <form action="" method="post">
           <input
+            class="ctrl"
             type="email"
             id="email"
             name="email"
             placeholder="Email"
             required
           />
-        </p>
-        <p>
           <input
+            class="ctrl"
             type="Contraseña"
             id="Contraseña"
             name="Contraseña"
             placeholder="Contraseña"
             required
           />
-        </p>
+          <div>
+            <button 
+             class="btn"
+             type="submit">Enviar</button>
+          </div>
+        </form>
         <h4>ó inicia sesión con:</h4>
         <a href="">
           <i class="fa-brands fa-google"></i>
@@ -139,12 +145,8 @@
         <a href="">
           <i class="fa-brands fa-facebook"></i>
         </a>
-
-        <div>
-          <button type="submit">Enviar</button>
-        </div>
         <p>Aún no tienes cuenta? <a href="#">Registrate Aquí</a></p>
-      </div>
+      </section>
     </main>
     <footer class="footerFlex">
       <img src="/img/logo2.png" alt="logo" class="logoFooter" />
