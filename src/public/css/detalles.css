@@ -126,7 +126,7 @@
 .btnCantidad {
   border: none;
   background: none;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
