@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="d-flex align-items-start justify-content-center">
+      <div class="container p-4 rounded contentWidth">
+        <form class="p-4 rounded form my-5">
+            <h2 class="fs-5 text-center py-3">Crear Producto</h2>
+          <div class="mb-3">
+            <input
+              class="ctrl"
+              type="text"
+              name="nombre"
+              placeholder="Nombre del producto"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="ctrl"
+              name="descripcion"
+              placeholder="Descripción del producto"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              class="ctrl"
+              type="number"
+              name="precio"
+              placeholder="Precio"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <select name="talles" class="ctrl">
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label>Imagen del producto</label>
+            <input type="file" required />
+          </div>
+
+          <button type="submit" class="btn btn-light w-100 my-4">Crear</button>
+        </form>
+      </div>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

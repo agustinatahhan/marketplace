@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="main-content">
+      <div class="main">
+        <!--inicio del div mini-->
+        <div class="miniatura">
+          <img src="/img/img.jpeg" alt="imgmini" class="img-mini">
+          <img src="/img/img2.jpeg" alt="imgmini" class="img-mini">
+          <img src="/img/img.jpeg" alt="imgmini" class="img-mini">
+        </div>
+        <!--fin del div mini-->
+
+        <!--inicio del div principal-->
+        <div class="principal">
+          <img
+            class="img-principal"
+            src="img/ropa.jpeg"
+            alt="imagenprincipal"
+          />
+          <!-- <p>Pantalón marrón tiro alto</p> -->
+        </div>
+        <!--fin del div principal-->
+
+        <!--inicio del div detalles-->
+        <div class="detalles">
+          <h3>Pantalón Marrón</h3>
+          <p>$50.000</p>
+          <form action="">
+            <div class="cant">
+              <label for="cantidad">Cantidad</label>
+              <div class="boxCantidad">
+                <button class="btnCantidad">-</button>
+                <p>1</p>
+                <button class="btnCantidad">+</button>
+              </div>
+            </div>
+            <div class="button-container">
+              <button class="custom-button">S</button>
+              <button class="custom-button">M</button>
+              <button class="custom-button">L</button>
+              <button class="custom-button">XL</button>
+            </div>
+            <!--promociones bancarias-->
+            <div class="promociones">
+              <div class="promocion">
+                <h3>
+                  Promociones Bancarias <i class="fa-solid fa-credit-card"></i>
+                </h3>
+                <p>3 cuotas fijas de $16.700</p>
+                <p>6 cuotas fijas de $8350</p>
+                <p>12 cuotas fijas de $4200</p>
+              </div>
+            </div>
+            <!--fin promociones bancarias-->
+            <button class="btn-carrito" type="submit">
+              Agregar Al Carrito
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!--fin del div principal-->
+    <%- include("../partials/footer.ejs")  %>
+  </body>
+</html>
+
+<script>
+  function seleccionarTalle(talle) {
+    // Aquí puedes realizar acciones con el talle seleccionado, como enviarlo a un servidor o almacenarlo en una variable.
+    console.log("Talle seleccionado:", talle);
+    // También puedes resaltar el botón seleccionado, cambiar estilos, etc.
+  }
+</script>

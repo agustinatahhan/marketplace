@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="main-content">
+      <div class="cartContainer">
+        <div class="cartGrid">
+          <table class="cartTable">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cartItem">
+                <td><img src="/img/ropa.jpeg" alt="ropa" /></td>
+                <td>Pantalón Marrón</td>
+                <td>
+                  <div class="boxCantidad">
+                    <button class="btnCantidad">-</button>
+                    <p class="cant">1</p>
+                    <button class="btnCantidad">+</button>
+                  </div>
+                </td>
+                <td>$50.000</td>
+              </tr>
+              <tr class="cartItem">
+                <td><img src="/img/pantalon2.jpeg" alt="ropa" /></td>
+                <td>Pantalón Gris</td>
+                <td>
+                  <div class="boxCantidad">
+                    <button class="btnCantidad">-</button>
+                    <p>1</p>
+                    <button class="btnCantidad">+</button>
+                  </div>
+                </td>
+                <td>$40.000</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cartCheckout">
+            <h4>TOTAL: $90.000</h4>
+            <button>Continuar al pago</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer.ejs")  %>
+  </body>
+</html>

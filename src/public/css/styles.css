@@ -36,7 +36,7 @@ main {
   background: url(../img/bg.jpeg);
 }
 
-.main-content{
+.main-content {
   padding-top: 6rem;
   padding-bottom: 7rem;
 }
@@ -111,7 +111,7 @@ nav {
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .icons {
     gap: 1rem;
     margin-left: 3rem;
@@ -146,7 +146,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 4rem;
+  padding: 5rem 4rem;
 }
 
 .logoFooter {
@@ -173,13 +173,23 @@ nav {
 
 .copyright {
   font-weight: 400;
+  font-size: 15px;
+}
+
+ul {
+  padding: 0;
 }
 
 .infoFooter ul li a:hover {
   color: white;
 }
 
-@media screen and (max-width: 768px) {
+.infoFooter h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
   .copyright {
     display: none;
   }
@@ -190,12 +200,17 @@ nav {
 
   .iconsFooter {
     gap: 1rem;
+    align-items: center;
     justify-content: center;
     margin: 0;
+    padding: 0;
   }
 
   .infoFooter {
     display: none;
+  }
+  .footerFlex {
+    justify-content: center;
   }
 }
 
@@ -268,6 +283,13 @@ nav {
   font-weight: bold;
 }
 
+@media (max-width: 767px ){
+  .form-register {
+    width: 90%;
+    height: fit-content;
+  }
+}
+
 /* ------------------------FIN FORM REGISTER--------------------------------- */
 
 /* ------------------------INICIO CARRITO------------------------------- */
@@ -323,7 +345,7 @@ nav {
   height: 1.5rem;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .cartCheckout {
@@ -352,37 +374,47 @@ nav {
   background-color: #f0dcc7;
 }
 
+@media (max-width: 767px){
+  .cartTable th,
+  .cartTable td {
+    padding: .5rem;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 15px;
+  }
+  
+  .cartItem img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+  
+ .boxCantidad p{
+  font-size: 12px;
+ }
+}
 /* ------------------------FIN CARRITO------------------------------- */
 .mainCarrousel {
   width: 100%;
   margin: 3rem 0;
 }
+
 .carrousel-list {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-/* .carrousel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 ;
-} */
 
 .carrousel h6 {
   font-size: 15px;
   line-height: 7px;
   padding-bottom: 8px;
-  opacity: .9;
+  opacity: 0.9;
   font-weight: 300;
   text-align: right;
   color: rgb(0, 0, 0);
 }
-
-
 
 .carrousel-track {
   /* top: 0;
@@ -391,6 +423,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
   /* transition: .5s ease-in-out; */
 }
 
@@ -419,10 +452,20 @@ nav {
   width: 200px;
   border-radius: 15px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-@media(min-width:768px) {
+@media (max-width: 767px) {
+  .carrousel-track {
+    /* top: 0;
+    left: 0; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    /* transition: .5s ease-in-out; */
+  }
+
   .carrousel {
     width: 275px;
   }
@@ -432,31 +475,12 @@ nav {
   }
 }
 
-.carousel-container {
-  position: relative;
-}
+@media ((min-width: 768px) and (max-width: 1100px)){
+  .carrousel-track {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 
-.arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #241916;
-  color: white;
-  text-align: center;
-  line-height: 40px;
-  font-size: 24px;
-  position: absolute;
-  cursor: pointer;
-}
-
-.left-arrow {
-  left: -60px;
-  bottom: -20px;
-}
-
-.right-arrow {
-  right: -100px;
-  bottom: -20px;
 }
 
 /* ------------------------FIN CARROUSEL----------------------------- */
@@ -474,6 +498,7 @@ nav {
   margin: 0 auto 0;
   overflow: hidden;
 }
+
 
 .sliderFrame ul {
   display: flex;
@@ -527,3 +552,17 @@ nav {
 }
 
 /* ------------------------FIN SLIDER----------------------------- */
+
+.contentWidth {
+  width: 50%;
+}
+
+.form {
+  background: #d1b292;
+}
+
+@media (max-width: 767px) {
+  .contentWidth {
+    width: 90%;
+  }
+}

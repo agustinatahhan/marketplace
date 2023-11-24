@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main align="center" class="main-content">
+      <section class="form-register">
+        <p>INICIAR SESIÓN</p>
+        <form action="" method="post">
+          <input
+            class="ctrl"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            class="ctrl"
+            type="Contraseña"
+            id="Contraseña"
+            name="Contraseña"
+            placeholder="Contraseña"
+            required
+          />
+          <div>
+            <button class="btn" type="submit">Enviar</button>
+          </div>
+        </form>
+        <p>ó inicia sesión con:</p>
+        <a href="">
+          <i class="fa-brands fa-google"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <p>Aún no tienes cuenta? <a href="/register">Registrate Aquí</a></p>
+      </section>
+    </main>
+    <%- include("../partials/footer.ejs")  %>
+  </body>
+</html>
