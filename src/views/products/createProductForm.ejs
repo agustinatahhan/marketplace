@@ -7,13 +7,14 @@
 
     <main class="d-flex align-items-start justify-content-center">
       <div class="container p-4 rounded contentWidth">
-        <form class="p-4 rounded form my-5">
+        <form class="p-4 rounded form my-5" action="" method="post">
             <h2 class="fs-5 text-center py-3">Crear Producto</h2>
           <div class="mb-3">
             <input
               class="ctrl"
               type="text"
               name="nombre"
+              id="nombre"
               placeholder="Nombre del producto"
               required
             />
@@ -23,6 +24,7 @@
               type="text"
               class="ctrl"
               name="descripcion"
+              id="descripcion"
               placeholder="Descripción del producto"
               required
             />
@@ -32,12 +34,13 @@
               class="ctrl"
               type="number"
               name="precio"
+              id="precio"
               placeholder="Precio"
               required
             />
           </div>
           <div class="mb-3">
-            <select name="talles" class="ctrl">
+            <select name="talles" id="talles" class="ctrl">
                 <option value="s">S</option>
                 <option value="m">M</option>
                 <option value="l">L</option>
@@ -49,6 +52,7 @@
             <input type="file" required />
           </div>
 
+          <button type="reset" class="btn btn-light w-100 my-4">Borrar</button>
           <button type="submit" class="btn btn-light w-100 my-4">Crear</button>
         </form>
       </div>
