@@ -566,3 +566,41 @@ ul {
     width: 90%;
   }
 }
+
+.imgProduct{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 0;
+  gap: 3rem;
+}
+
+.btnForm{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.btnForm button {
+  width: 100%;
+  background: #000;
+  border: none;
+  padding: 8px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  font-family: "Satoshi", sans-serif;
+  cursor: pointer;
+}
+
+.btnForm button:hover {
+  background: #f0dcc7;
+  color: #fff;
+  font-weight: bold;
+}
