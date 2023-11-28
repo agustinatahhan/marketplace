@@ -1,137 +1,168 @@
 /* --------------------- INICIO DEL DETALLE-----------------------------*/
 
-/*POSICIONAMIENTO DE LOS 3 DIVS */
-.main {
+.columnas{
   display: grid;
-  grid-template-columns: 30% 35% 35%; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 3rem;
-  height: 25rem; 
-  margin: 0 100px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
 }
 
-.miniatura{
+.columnas h4, h5{
+  font-weight: 500;
+}
+
+.columna{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
 }
 
-.img-mini {
-  width: 8rem;
-  height: 8rem;
-  object-fit: cover;
-  border-radius: 3px;
+.imgDetalle{
+  width: 30rem;
+  height: 30rem;
+  border-radius: 2px;
+  background-position: center;
+  box-shadow: 2px 2px 10px #ebebeb;
+
 }
 
-.img-principal{
-  width: 20rem;
-  height: 25rem;
-  border-radius: 4px;
+.contenedorOpciones{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #f4e5d7, #f8ebdf);
+  box-shadow: 2px 2px 20px #ebebeb;
 }
 
-.custom-button {
-  padding: 10px 20px;
-  border: 2px solid black; 
-  border-radius: 10px; 
-  background-color: white; 
-  color: #1e1e1e; 
-  font-size: 16px;
+.formOpciones{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1.5rem;
+}
+
+.tituloProducto{
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.price{
+  font-size: 15px;
+}
+
+.tallesContenedor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.talleBox{
+  width: 3rem;
+  height: 2.5rem;
   cursor: pointer;
-  margin: 5px;
-}
-
-/* Estilo para contenedor */
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-/*estilos para promociones bancarias*/
-
-/* Estilos para el contenedor de promociones */
-.promociones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Estilos para cada promoción individual */
-.promocion {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.promocion h3 {
-  margin-top: 0;
-  font-size: 20px;
-  color: #333;
-}
-
-.detalles {
-  
-  width: fit-content; 
-  height: 25rem;
-  padding: 30px;
-  box-sizing: border-box; 
-  background: linear-gradient(to top, #d1b292, #dac3a3);
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.promociones {
-  max-width: 100%; 
-  margin-top: 20px; 
-}
-
-.btn-carrito {
-  display: block;
-  width: 100%;
-  background-color: #030f29;
+  background: #ffffff;
   border: none;
-  padding: 12px;
-  color: white;
-  margin: 16px 0;
-  font-size: 16px;
   border-radius: 10px;
-  font-family: "Satoshi", sans-serif;
-  letter-spacing: 1px;
-  cursor: pointer;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 1rem;
 }
 
-.btn-carrito:hover{
-  background-color: #ebebeb;
-  color: black;
+.talleBox:hover{
+  background-color: #faf0e6;
+}
+
+.talleBox h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
 }
 
 .cant{
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  gap: .5rem;
-}
-
-.boxCantidad {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-}
-
-.btnCantidad {
-  border: none;
-  background: none;
-  /* border: 1px solid black; */
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
+  gap: 1rem;
   cursor: pointer;
 }
 
+.cant input{
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.promocionesBancarias{
+  width: 100%;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  padding: 4px;
+}
+
+.promocionesBancarias h5{
+  margin: .5rem 0;
+}
+
+
+.btnDetail {
+  width: 100%;
+  background: #000000;
+  border: none;
+  padding: 8px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btnDetail:hover {
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+}
+
+@media (max-width: 767px){
+  .columnas{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  
+.imgDetalle{
+  width: 90%
+
+}
+
+.contenedorOpciones{
+ width: 90%;
+}
+
+
+}
 
 /* --------------------- FIN DEL DETALLE-----------------------------*/

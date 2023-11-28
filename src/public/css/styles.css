@@ -226,7 +226,7 @@ ul {
   font-family: "Satoshi", sans-serif;
   font-weight: bold;
   color: rgb(0, 0, 0);
-  box-shadow: 7px 13px 37px #000000;
+  box-shadow: 2px 2px 10px #adadad;
 }
 
 .form-register h4 {
@@ -588,14 +588,13 @@ ul {
 
 .btnForm button {
   width: 100%;
-  background: #000;
+  background: #000000;
   border: none;
   padding: 8px;
   color: white;
   margin: 16px 0;
   font-size: 16px;
   border-radius: 10px;
-  font-family: "Satoshi", sans-serif;
   cursor: pointer;
 }
 

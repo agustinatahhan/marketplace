@@ -6,73 +6,44 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-content">
-      <div class="main">
-        <!--inicio del div mini-->
-        <div class="miniatura">
-          <img src="/img/img.jpeg" alt="imgmini" class="img-mini">
-          <img src="/img/img2.jpeg" alt="imgmini" class="img-mini">
-          <img src="/img/img.jpeg" alt="imgmini" class="img-mini">
+      <div class="columnas">
+        <div class="columna">
+          <img class="imgDetalle" src="/img/ropa.jpeg">
         </div>
-        <!--fin del div mini-->
-
-        <!--inicio del div principal-->
-        <div class="principal">
-          <img
-            class="img-principal"
-            src="img/ropa.jpeg"
-            alt="imagenprincipal"
-          />
-          <!-- <p>Pantalón marrón tiro alto</p> -->
-        </div>
-        <!--fin del div principal-->
-
-        <!--inicio del div detalles-->
-        <div class="detalles">
-          <h3>Pantalón Marrón</h3>
-          <p>$50.000</p>
-          <form action="">
-            <div class="cant">
-              <label for="cantidad">Cantidad</label>
-              <div class="boxCantidad">
-                <button class="btnCantidad">-</button>
-                <p>1</p>
-                <button class="btnCantidad">+</button>
+        <div class="columna">
+          <div class="contenedorOpciones"> <!-- inicio del contenedor de opciones-->
+            <div class="formOpciones">
+              <h4 class="tituloProducto">Pantalón Marrón</h4>
+              <h4 class="price">$30.000</h4>
+              <div class="cant">
+                <h4>Cantidad:</h4>
+                <input type="number" min="1" max="10" placeholder="1">
               </div>
-            </div>
-            <div class="button-container">
-              <button class="custom-button">S</button>
-              <button class="custom-button">M</button>
-              <button class="custom-button">L</button>
-              <button class="custom-button">XL</button>
-            </div>
-            <!--promociones bancarias-->
-            <div class="promociones">
-              <div class="promocion">
-                <h3>
+              <div class="tallesContenedor">
+                <div class="talleBox"><h4>S</h4></div>
+                <div class="talleBox"><h4>M</h4></div>
+                <div class="talleBox"><h4>L</h4></div>
+                <div class="talleBox"><h4>XL</h4></div>
+              </div>
+              <div class="promocionesBancarias">
+                <h4>
                   Promociones Bancarias <i class="fa-solid fa-credit-card"></i>
-                </h3>
-                <p>3 cuotas fijas de $16.700</p>
-                <p>6 cuotas fijas de $8350</p>
-                <p>12 cuotas fijas de $4200</p>
+                </h4>
+                <h5>3 cuotas fijas de $16.700</h5>
+                <h5>6 cuotas fijas de $8350</h5>
+                <h5>12 cuotas fijas de $4200</h5>
               </div>
+              <button class="btnDetail" type="submit">
+                Agregar al carrito
+              </button>
             </div>
-            <!--fin promociones bancarias-->
-            <button class="btn-carrito" type="submit">
-              Agregar Al Carrito
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </main>
-    <!--fin del div principal-->
+
     <%- include("../partials/footer.ejs")  %>
   </body>
 </html>
 
-<script>
-  function seleccionarTalle(talle) {
-    // Aquí puedes realizar acciones con el talle seleccionado, como enviarlo a un servidor o almacenarlo en una variable.
-    console.log("Talle seleccionado:", talle);
-    // También puedes resaltar el botón seleccionado, cambiar estilos, etc.
-  }
-</script>
+
