@@ -2,46 +2,73 @@
     {
         "name": "Pantalón Gris",
         "image": "/img/pantalon2.jpeg",
-        "price": 45000
+        "price": 45000,
+        "description": "Pantalón ancho, tiro alto, formal",
+        "size": ["S", "M", "L"],
+        "category": "Pantalones"
     },
     {
         "name": "Camisa Hueso",
         "image": "/img/camisaHueso.jpg",
-        "price": 20000
+        "price": 20000,
+        "description": "Camisa oversize beige",
+        "size": ["S", "M", "L"],
+        "category": "Camisas"
     },
     {
         "name": "Musculosa Negra",
         "image": "/img/musculosaNegra.jpg",
-        "price": 15000
+        "price": 15000,
+        "description": "Musculosa negra básica, de algodón 100%",
+        "size": ["S", "M", "L"],
+        "category": "Remeras"
     },
     {
         "name": "Pantalón Marrón",
         "image": "/img/ropa.jpeg",
-        "price": 50000
+        "price": 50000,
+        "description": "Pantalón marrón ancho, tiro alto",
+        "size": ["S", "M", "L"],
+        "category": "Pantalones"
     },
     {
         "name": "Vestido Negro",
         "image": "/img/vestidoNegro.jpg",
-        "price": 45000
+        "price": 45000,
+        "description": "Vestido negro corto, con un pequeño tajo y tiras finas",
+        "size": ["S", "M", "L"],
+        "category": "Vestidos"
     },
     {
         "name": "Short Negro",
         "image": "/img/shortNegro.jpg",
-        "price": 18000
+        "price": 18000,
+        "description": "Short negro suelto de cuerina, tiro alto",
+        "size": ["S", "M", "L"],
+        "category": "Shorts"
     },
     {
         "name": "Vestido Blanco",
         "image": "/img/vestidoBlanco.jpg",
-        "price": 36000
+        "price": 36000,
+        "description": "Vestido blanco corto con mangas y lazo",
+        "size": ["S", "M", "L"],
+        "category": "Vestidos"
     },
     {
         "name": "Vestido Rosa",
         "image": "/img/vestidoRosa.jpg",
-        "price": 22000
+        "price": 22000,
+        "description": "Vestido rosa largo con mangas, oversize",
+        "size": ["S", "M", "L"],
+        "category": "Vestidos"
     },
     {
         "name": "Sweater Beige",
         "image": "/img/sweaterBeige.jpg",
-        "price": 28000
+        "price": 28000,
+        "description": "Sweater de lana beige oversize",
+        "size": ["S", "M", "L"],
+        "category": "Abrigos"
     }
 ]
