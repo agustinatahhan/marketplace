@@ -6,6 +6,12 @@ const port = 3000;
 
 const routesIndex = require("./routes/index");
 
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"))
+
 app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "views"));
