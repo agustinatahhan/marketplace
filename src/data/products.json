@@ -1,119 +1,130 @@
 [
-    {
-        "id": 1,
-        "name": "Pantalón Gris",
-        "image": "/img/pantalon2.jpeg",
-        "price": 45000,
-        "description": "Pantalón ancho, tiro alto, formal",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Pantalones"
-    },
-    {
-        "id": 2,
-        "name": "Camisa Hueso",
-        "image": "/img/camisaHueso.jpg",
-        "price": 20000,
-        "description": "Camisa oversize beige",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Camisas"
-    },
-    {
-        "id": 3,
-        "name": "Musculosa Negra",
-        "image": "/img/musculosaNegra.jpg",
-        "price": 15000,
-        "description": "Musculosa negra básica, de algodón 100%",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Remeras"
-    },
-    {
-        "id": 4,
-        "name": "Pantalón Marrón",
-        "image": "/img/ropa.jpeg",
-        "price": 50000,
-        "description": "Pantalón marrón ancho, tiro alto",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Pantalones"
-    },
-    {
-        "id": 5,
-        "name": "Vestido Negro",
-        "image": "/img/vestidoNegro.jpg",
-        "price": 45000,
-        "description": "Vestido negro corto, con un pequeño tajo y tiras finas",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Vestidos"
-    },
-    {
-        "id": 6,
-        "name": "Short Negro",
-        "image": "/img/shortNegro.jpg",
-        "price": 18000,
-        "description": "Short negro suelto de cuerina, tiro alto",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Shorts"
-    },
-    {
-        "id": 7,
-        "name": "Vestido Blanco",
-        "image": "/img/vestidoBlanco.jpg",
-        "price": 36000,
-        "description": "Vestido blanco corto con mangas y lazo",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Vestidos"
-    },
-    {
-        "id": 8,
-        "name": "Vestido Rosa",
-        "image": "/img/vestidoRosa.jpg",
-        "price": 22000,
-        "description": "Vestido rosa largo con mangas, oversize",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Vestidos"
-    },
-    {
-        "id": 9,
-        "name": "Sweater Beige",
-        "image": "/img/sweaterBeige.jpg",
-        "price": 28000,
-        "description": "Sweater de lana beige oversize",
-        "size": [
-            "S",
-            "M",
-            "L"
-        ],
-        "category": "Abrigos"
-    }
+ {
+  "id": "fc56917a-33aa-41dc-b0e4-d8b7aee75c1c",
+  "name": "Pantalón Gris",
+  "description": "Pantalón ancho, tiro alto, formal",
+  "price": "45000",
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "category": "pantalones",
+  "img": "1702316960648-pantalon2.jpeg"
+ },
+ {
+  "id": "d16e575b-f391-4a8c-bf0e-a819bd6736fe",
+  "name": "Camisa Oversize",
+  "description": "Camisa oversize beige",
+  "price": "20000",
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "category": "blusas",
+  "img": "1702316996147-camisaHueso.jpg"
+ },
+ {
+  "id": "3b1a022e-7da1-4990-b44b-693a28da97e6",
+  "name": "Musculosa Negra",
+  "description": "Musculosa negra básica, de algodón 100%",
+  "price": "15000",
+  "sizes": [
+   "S",
+   "M",
+   "XL"
+  ],
+  "category": "blusas",
+  "img": "1702317037890-musculosaNegra.jpg"
+ },
+ {
+  "id": "9bf54d19-b338-444f-a369-24b78ceab6bf",
+  "name": "Pantalón Marrón",
+  "description": "Pantalón marrón ancho, tiro alto",
+  "price": "50000",
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "category": "pantalones",
+  "img": "1702317065823-ropa.jpeg"
+ },
+ {
+  "id": "068652d5-e4d2-42f1-9d7c-e975f44208fc",
+  "name": "Vestido Negro",
+  "description": "Vestido negro corto, con un pequeño tajo y tiras finas",
+  "price": "45000",
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "category": "vestidos",
+  "img": "1702317094158-vestidoNegro.jpg"
+ },
+ {
+  "id": "19478ea5-220f-4ad8-bde1-665cddbe704a",
+  "name": "Short Negro",
+  "description": "Short negro suelto de cuerina, tiro alto",
+  "price": "18000",
+  "sizes": [
+   "L",
+   "XL"
+  ],
+  "img": "1702317125928-shortNegro.jpg"
+ },
+ {
+  "id": "8dd7afd7-8b7e-4992-92bd-170a4f233212",
+  "name": "Vestido Blanco",
+  "description": "Vestido blanco corto con mangas y lazo",
+  "price": "36000",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "category": "vestidos",
+  "img": "1702317161567-vestidoBlanco.jpg"
+ },
+ {
+  "id": "4f89aafb-b190-4111-8ef3-95a8fa32b439",
+  "name": "Vestido Rosa",
+  "description": "Vestido rosa largo con mangas, oversize",
+  "price": "22000",
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "category": "vestidos",
+  "img": "1702317190697-vestidoRosa.jpg"
+ },
+ {
+  "id": "71080e15-d264-4455-91fd-a37bb58353d0",
+  "name": "Sweater Beige",
+  "description": "Sweater de lana beige oversize",
+  "price": "28000",
+  "sizes": [
+   "M",
+   "L"
+  ],
+  "category": "abrigos",
+  "img": "1702317215445-sweaterBeige.jpg"
+ },
+ {
+  "id": "e4885322-bc7b-447a-82b9-2d6f306466b7",
+  "name": "Chaleco Marrón",
+  "description": "Chaleco marrón tejido con lazos a los costados",
+  "price": "25000",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "category": "abrigos",
+  "img": "1702317241294-chaleco.jpg"
+ }
 ]

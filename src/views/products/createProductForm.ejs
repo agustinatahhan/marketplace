@@ -7,14 +7,14 @@
 
     <main class="main-content">
       <section class="form-register" >
-        <form action="/create" method="post"> <!-- enctype="multipart/form-data" -->
+        <form action="/create" method="POST" enctype="multipart/form-data"> 
           <p>Crear Producto</p>
           <div>
             <input
               class="ctrl"
               type="text"
-              name="nombre"
-              id="nombre"
+              name="name"
+              id="name"
               placeholder="Nombre del producto"
               required
             />
@@ -23,8 +23,8 @@
             <input
               type="text"
               class="ctrl"
-              name="descripcion"
-              id="descripcion"
+              name="description"
+              id="description"
               placeholder="Descripción del producto"
               required
             />
@@ -33,30 +33,37 @@
             <input
               class="ctrl"
               type="number"
-              name="precio"
-              id="precio"
+              name="price"
+              id="price"
               placeholder="Precio"
               required
             />
           </div>
           <div>
-            <select name="talles" id="talles" class="ctrl">
-              <option value="" disabled selected>Talles</option>
-              <option value="s">S</option>
-              <option value="m">M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
+            <label><input type="checkbox" name="sizes[]" value="S"> S</label>
+            <label><input type="checkbox" name="sizes[]" value="M"> M</label>
+            <label><input type="checkbox" name="sizes[]" value="L"> L</label>
+            <label><input type="checkbox" name="sizes[]" value="XL"> XL</label>
+          </div>
+          <div>
+            <select name="category" id="category" class="ctrl">
+              <option value="" disabled selected>Categoría</option>
+              <option value="blusas">Blusas</option>
+              <option value="abrigos">Abrigos</option>
+              <option value="pantalones">Pantalones</option>
+              <option value="vestidos">Vestidos</option>
             </select>
           </div>
           <div class="imgProduct">
             <p>Imagen:</p>
-            <input type="file" required />
+            <input type="file" name="img" id="img" required />
           </div>
-          <div class="btnForm">
 
+          <div class="btnForm">
             <button type="reset">Borrar</button>
             <button type="submit">Crear</button>
           </div>
+
         </form>
       </section>
     </main>

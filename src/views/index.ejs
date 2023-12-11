@@ -3,7 +3,7 @@
   <%- include("./partials/head.ejs") %>
 
   <body>
-   <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header.ejs") %>
     <main>
       <div class="sliderContainer">
         <!-- Inicio slider -->
@@ -13,132 +13,38 @@
               <img src="img/slider1.jpg" alt="slider" />
             </li>
             <li>
-              <img src="img/slider2.jpg" alt="slider"  />
+              <img src="img/slider2.jpg" alt="slider" />
             </li>
             <li>
-              <img src="img/slider3.jpg" alt="slider"  />
+              <img src="img/slider3.jpg" alt="slider" />
             </li>
             <li>
-              <img src="img/slider4.jpg" alt="slider"  />
+              <img src="img/slider4.jpg" alt="slider" />
             </li>
           </ul>
         </div>
-
-        <!-- <div class="title">
-          <img src="{logoBlanco}" alt="logo" />
-        </div>
-        <NavLink to="/home" class="navlink"> Busca tu actividad </NavLink> -->
       </div>
       <!-- Fin slider -->
       <div class="mainCarrousel">
         <div class="carrousel-list">
-          <!-- <div class="arrow left-arrow">&larr;</div> -->
           <div class="carrousel-track">
+        
+            <% listProducts.forEach(product=> { %>
             <div class="carrousel">
               <div>
-                <a href="/detail">
-                  <img src="/img/pantalon2.jpeg" alt="Pantalon Gris" />
-                  <h4>Pantalón Gris</h4>
-                  <h6>$45.000</h6>
-                </a>
-              </div>
-            </div>
-            <!-- 
-            <div class="carrousel">
-              <div>
-                <a href="/">
-                  <img src="/img/BuzoBeige.jpg" alt="Buzo Beige" />
-                  <h4>Buzo Beige</h4>
-                  <h6>$30.000</h6>
-                </a>
-              </div>
-            </div> -->
-
-            <div class="carrousel">
-              <div>
-                <a href="/detail">
-                  <img src="/img/camisaHueso.jpg" alt="Camisa Hueso" />
-                  <h4>Camisa Hueso</h4>
-                  <h6>$20.000</h6>
+                <a href="/products/detail/<%= product.id %>">
+                  <img src="/img/<%= product.img %>" alt="<%= product.name %>" />
+                  <h4><%= product.name %></h4>
+                  <h6>$<%= product.price %></h6>
                 </a>
               </div>
             </div>
 
-            <div class="carrousel">
-              <div>
-                <a href="/detail">
-                  <img src="/img/musculosaNegra.jpg" alt="Musculosa Negra" />
-                  <h4>Musculosa Negra</h4>
-                  <h6>$15.000</h6>
-                </a>
-              </div>
-            </div>
-
-            <div class="carrousel">
-              <div>
-                <a href="/detail">
-                  <img src="/img/ropa.jpeg" alt="Pantalon Marron" />
-                  <h4>Pantalón Marrón</h4>
-                  <h6>$50.000</h6>
-                </a>
-              </div>
-            </div>
-
-            <div class="carrousel">
-              <div>
-                <a href="/detail">
-                  <img src="/img/vestidoNegro.jpg" alt="Vestido Negro" />
-                  <h4>Vestido Negro</h4>
-                  <h6>$45.000</h6>
-                </a>
-              </div>
-            </div>
-            <!--
-            <div class="carrousel">
-              <div>
-                <a href="/">
-                  <img src="/img/shortNegro.jpg" alt="Short Negro" />
-                  <h4>Short Negro</h4>
-                  <h6>$18.000</h6>
-                </a>
-              </div>
-            </div>
-  
-            <div class="carrousel">
-              <div>
-                <a href="/">
-                  <img src="/img/vestidoBlanco.jpg" alt="Vestido Blanco" />
-                  <h4>Vestido Blanco</h4>
-                  <h6>$36.000</h6>
-                </a>
-              </div>
-            </div>
-  
-            <div class="carrousel">
-              <div>
-                <a href="/">
-                  <img src="/img/vestidoRosa.jpg" alt="Vestido Rosa" />
-                  <h4>Vestido Rosa</h4>
-                  <h6>$22.000</h6>
-                </a>
-              </div>
-            </div>
-  
-            <div class="carrousel">
-              <div>
-                <a href="/">
-                  <img src="/img/sweaterBeige.jpg" alt="Sweater Beige" />
-                  <h4>Sweater Beige</h4>
-                  <h6>$28.000</h6>
-                </a>
-              </div>
-            </div> -->
+            <% }) %>
           </div>
-
-          <!-- <div class="arrow right-arrow">&rarr;</div> -->
         </div>
       </div>
     </main>
-    <%- include("./partials/footer.ejs")  %>
+    <%- include("./partials/footer.ejs") %>
   </body>
 </html>
