@@ -7,15 +7,20 @@
 
     <main class="main-content">
       <section class="form-register">
-        <form action="" method="post"> <!-- enctype="multipart/form-data" -->
-          <p>Editar Producto</p>
+        <form
+          action="/edit/<%= product.id %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <p>Actualizar producto</p>
           <div>
             <input
               class="ctrl"
               type="text"
-              name="nombre"
-              id="nombre"
+              name="name"
+              id="name"
               placeholder="Nombre del producto"
+              value="<%= product.name %>"
               required
             />
           </div>
@@ -23,9 +28,10 @@
             <input
               type="text"
               class="ctrl"
-              name="descripcion"
-              id="descripcion"
+              name="description"
+              id="description"
               placeholder="Descripción del producto"
+              value="<%= product.description %>"
               required
             />
           </div>
@@ -33,28 +39,37 @@
             <input
               class="ctrl"
               type="number"
-              name="precio"
-              id="precio"
+              name="price"
+              id="price"
               placeholder="Precio"
+              value="<%= product.price %>"
               required
             />
           </div>
           <div>
-            <select name="talles" id="talles" class="ctrl">
-              <option value="" disabled selected>Talles</option>
-              <option value="s">S</option>
-              <option value="m">M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
+            <label><input type="radio" name="sizes" value="S" <%= product.sizes.includes('S') ? 'checked' : '' %>/> S</label>
+            <label><input type="radio" name="sizes" value="M" <%= product.sizes.includes('M') ? 'checked' : '' %>/> M</label>
+            <label><input type="radio" name="sizes" value="L" <%= product.sizes.includes('L') ? 'checked' : '' %>/> L</label>
+            <label><input type="radio" name="sizes" value="XL" <%= product.sizes.includes('XL') ? 'checked' : '' %>/> XL</label>
+          </div>
+          
+          <div>
+            <select name="category" id="category" class="ctrl">
+              <option value="" disabled>Selecciona una categoría</option>
+              <option value="blusas" <%= product.category === 'blusas' ? 'selected' : '' %>>Blusas</option>
+              <option value="vestidos" <%= product.category === 'vestidos' ? 'selected' : '' %>>Vestidos</option>
+              <option value="pantalones" <%= product.category === 'pantalones' ? 'selected' : '' %>>Pantalones</option>
+              <option value="abrigos" <%= product.category === 'abrigos' ? 'selected' : '' %>>Abrigos</option>
             </select>
           </div>
           <div class="imgProduct">
             <p>Imagen:</p>
-            <input type="file" required />
+            <input type="file" name="img" id="img" required />
           </div>
+
           <div class="btnForm">
             <button type="reset">Borrar</button>
-            <button type="submit">Crear</button>
+            <button type="submit">Actualizar producto</button>
           </div>
         </form>
       </section>

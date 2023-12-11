@@ -12,8 +12,8 @@ router.get('/detail', indexController.detail);
 router.get('/create', indexController.getFormProduct);
 router.post('/create', upload.single("img"), indexController.postProduct);
 
-router.get('/update', indexController.update);
-router.put('/update', indexController.update);
+router.get('/edit/:id' , indexController.getEditForm)
+router.put('/edit/:id' , upload.single('img') , indexController.putCreate)
 
 
 module.exports = router

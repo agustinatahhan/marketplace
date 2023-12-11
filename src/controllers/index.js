@@ -10,7 +10,7 @@ const listProducts = JSON.parse(listProductsJson);
 const users = JSON.parse(fs.readFileSync(pathUsers, "utf-8")); */
 
 const controller = {
-  index: (req, res) => res.render("index", {listProducts}),
+  index: (req, res) => res.render("index", { listProducts }),
 
   login: (req, res) => res.render("users/login"),
   register: (req, res) => res.render("users/register"),
@@ -22,23 +22,53 @@ const controller = {
   postProduct: (req, res) => {
     console.log("req.body:", req.body);
     console.log("req.file:", req.file);
-  
+
     const newProduct = {
       id: uuidv4(),
       ...req.body,
       img: req.file.filename || "default.png",
     };
     listProducts.push(newProduct);
-  
+
     console.log("listProducts:", listProducts);
-  
+
     let listProductsJSON = JSON.stringify(listProducts, null, " ");
     fs.writeFileSync(pathProducts, listProductsJSON);
-  
+
     res.redirect("/");
   },
-  
-  update: (req, res) => res.render("products/updateProductForm"),
+
+  getEditForm: (req, res) => {
+    const id = req.params.id;
+    console.log("ID from URL:", id);
+
+    const product = listProducts.find(
+      (clothes) => clothes.id.toString() === id.toString()
+    );
+    if (product) {
+      res.render("products/updateProductForm", { product });
+    } else {
+      res.send("El producto no existe");
+    }
+  },
+  putCreate: (req, res) => {
+    const { id } = req.params;
+    const { name, description, price, sizes, category } = req.body;
+    const productToEdit = listProducts.find((clothes) => clothes.id == id);
+
+    productToEdit.name = name || productToEdit.name;
+    productToEdit.description = description || productToEdit.description;
+    productToEdit.price = price || productToEdit.price;
+    productToEdit.img = req.file.filename || productToEdit.img;
+
+    if (sizes && Array.isArray(sizes)) {
+      productToEdit.sizes = sizes;
+    }
+
+    productToEdit.category = category || productToEdit.category;
+    fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
+    res.redirect("/");
+  },
 };
 
 module.exports = controller;

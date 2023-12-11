@@ -3,14 +3,14 @@
   "id": "fc56917a-33aa-41dc-b0e4-d8b7aee75c1c",
   "name": "Pantalón Gris",
   "description": "Pantalón ancho, tiro alto, formal",
-  "price": "45000",
+  "price": "47000",
   "sizes": [
    "M",
    "L",
    "XL"
   ],
   "category": "pantalones",
-  "img": "1702316960648-pantalon2.jpeg"
+  "img": "1702336557936-1702316960648-pantalon2.jpeg"
  },
  {
   "id": "d16e575b-f391-4a8c-bf0e-a819bd6736fe",
@@ -29,14 +29,14 @@
   "id": "3b1a022e-7da1-4990-b44b-693a28da97e6",
   "name": "Musculosa Negra",
   "description": "Musculosa negra básica, de algodón 100%",
-  "price": "15000",
+  "price": "10000",
   "sizes": [
    "S",
    "M",
    "XL"
   ],
   "category": "blusas",
-  "img": "1702317037890-musculosaNegra.jpg"
+  "img": "1702335732293-1702317037890-musculosaNegra.jpg"
  },
  {
   "id": "9bf54d19-b338-444f-a369-24b78ceab6bf",
