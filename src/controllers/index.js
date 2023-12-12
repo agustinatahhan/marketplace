@@ -16,11 +16,6 @@ const controller = {
   detail: (req, res) => {
     const productId = req.params.id;
     const product = listProducts.find((p) => p.id === productId);
-
-    if (!product) {
-      return res.status(404).send("Producto no encontrado");
-    }
-
     res.render("products/productDetail", { product });
   },
 
