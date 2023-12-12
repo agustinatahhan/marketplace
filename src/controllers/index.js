@@ -6,16 +6,23 @@ const pathProducts = path.join(__dirname, "../data/products.json");
 const listProductsJson = fs.readFileSync(pathProducts, "utf-8");
 const listProducts = JSON.parse(listProductsJson);
 
-/* const pathUsers = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(pathUsers, "utf-8")); */
-
 const controller = {
   index: (req, res) => res.render("index", { listProducts }),
 
   login: (req, res) => res.render("users/login"),
   register: (req, res) => res.render("users/register"),
   cart: (req, res) => res.render("products/productCart"),
-  detail: (req, res) => res.render("products/productDetail"),
+
+  detail: (req, res) => {
+    const productId = req.params.id;
+    const product = listProducts.find((p) => p.id === productId);
+
+    if (!product) {
+      return res.status(404).send("Producto no encontrado");
+    }
+
+    res.render("products/productDetail", { product });
+  },
 
   getFormProduct: (req, res) => res.render("products/createProductForm"),
 
@@ -51,6 +58,7 @@ const controller = {
       res.send("El producto no existe");
     }
   },
+
   putCreate: (req, res) => {
     const { id } = req.params;
     const { name, description, price, sizes, category } = req.body;
