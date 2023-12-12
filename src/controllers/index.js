@@ -69,6 +69,28 @@ const controller = {
     fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
     res.redirect("/");
   },
+  destroy: (req, res) => {
+    const id = req.params.id;
+    const productToDelete = listProducts.find((product) => product.id === id);
+
+    if (!productToDelete) {
+      return res.status(404).send("Producto no encontrado");
+    }
+
+    // Utiliza filter y asigna el resultado a listProducts
+    listProducts = listProducts.filter((product) => product.id !== id);
+
+    fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
+
+    const imagePath = path.join(
+      __dirname,
+      "../../public/img/",
+      productToDelete.img
+    );
+    fs.unlinkSync(imagePath);
+
+    res.redirect("/");
+  },
 };
 
 module.exports = controller;

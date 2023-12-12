@@ -15,5 +15,6 @@ router.post('/create', upload.single("img"), indexController.postProduct);
 router.get('/edit/:id' , indexController.getEditForm)
 router.put('/edit/:id' , upload.single('img') , indexController.putCreate)
 
+router.delete('/delete/:id', indexController.destroy);
 
 module.exports = router

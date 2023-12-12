@@ -28,21 +28,27 @@
       <div class="mainCarrousel">
         <div class="carrousel-list">
           <div class="carrousel-track">
-        
-            <% listProducts.forEach(product=> { %>
+            <% listProducts.forEach(product => { %>
             <div class="carrousel">
               <div>
                 <a href="/products/detail/<%= product.id %>">
-                  <img src="/img/<%= product.img %>" alt="<%= product.name %>" />
+                  <img
+                    src="/img/<%= product.img %>"
+                    alt="<%= product.name %>"
+                  />
                   <h4><%= product.name %></h4>
                   <h6>$<%= product.price %></h6>
                 </a>
+
+                <form action="/delete/<%= product.id %>?_method=DELETE" method="POST">
+									<button type="submit">ELIMINAR</button>
+								</form>
+
                 <a href="/edit/<%= product.id %>">
                   <button>Editar</button>
                 </a>
               </div>
             </div>
-
             <% }) %>
           </div>
         </div>
