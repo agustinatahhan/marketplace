@@ -8,22 +8,23 @@
     <main class="main-content">
       <div class="columnas">
         <div class="columna">
-          <img class="imgDetalle" src="/img/ropa.jpeg">
+          <!-- Utiliza la variable 'product' que viene del controlador -->
+          <img class="imgDetalle" src="/img/<%= product.img %>">
         </div>
         <div class="columna">
-          <div class="contenedorOpciones"> <!-- inicio del contenedor de opciones-->
+          <div class="contenedorOpciones">
             <div class="formOpciones">
-              <h4 class="tituloProducto">Pantalón Marrón</h4>
-              <h4 class="price">$30.000</h4>
+              <h4 class="tituloProducto"><%= product.name %></h4>
+              <h4 class="price">Categoria: <%= product.category %></h4>
+              <h4 class="price">$<%= product.price %></h4>
               <div class="cant">
                 <h4>Cantidad:</h4>
                 <input type="number" min="1" max="10" placeholder="1">
               </div>
               <div class="tallesContenedor">
-                <div class="talleBox"><h4>S</h4></div>
-                <div class="talleBox"><h4>M</h4></div>
-                <div class="talleBox"><h4>L</h4></div>
-                <div class="talleBox"><h4>XL</h4></div>
+                <% product.sizes.forEach(size => { %>
+                  <div class="talleBox"><h4><%= size %></h4></div>
+                <% }) %>
               </div>
               <div class="promocionesBancarias">
                 <h4>
@@ -42,7 +43,7 @@
       </div>
     </main>
 
-    <%- include("../partials/footer.ejs")  %>
+    <%- include("../partials/footer.ejs") %>
   </body>
 </html>
 
