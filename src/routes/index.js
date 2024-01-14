@@ -20,4 +20,4 @@ router.put('/edit/:id' , upload.single('img') , indexController.putCreate)
 
 router.delete('/delete/:id', indexController.destroy);
 
-module.exports = router
+module.exports = router;
