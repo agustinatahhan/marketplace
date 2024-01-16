@@ -36,6 +36,10 @@ main {
   background: url(../img/bg.jpeg);
 }
 
+span{
+  font-weight: 200;
+}
+
 .main-content {
   padding-top: 6rem;
   padding-bottom: 7rem;

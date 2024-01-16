@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
 const path = require('path');
 const multer = require('multer');
-
 const {body} = require('express-validator');
 
 const storage = multer.diskStorage({
@@ -28,7 +26,8 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer ({storage});
 const {login, processLogin, profile, processRegister} = require("../controllers/users");
-// const userLoggedMiddleware = require("../middleware/userLoggedMiddleware");
+const {login, processLogin, profile} = require("../controllers/users");
+const userLoggedMiddleware = require("../middleware/userLoggedMiddleware");
 
 const validations = [
     body('firstName').notEmpty().withMessage('Tienes que escribir el nombre'),
@@ -63,9 +62,9 @@ const validations = [
 router.get("/login", login);
 router.post("/login", processLogin);
 
-//procesar el registro de usuarios
 router.post('/register', uploadFile.single('image'), validations,  processRegister);
 
-// router.get("/profile", userLoggedMiddleware, profile);
+ router.get("/profile", userLoggedMiddleware, profile);
+
 
 module.exports = router;

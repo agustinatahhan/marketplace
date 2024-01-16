@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
+const { log } = require("console");
 
 
 const { validationResult } = require('express-validator');
@@ -15,12 +16,18 @@ module.exports = {
         res.render("users/login.ejs")
     },
     processLogin: (req, res) => {
-        const {email, password} = req.body;
-        let userFound = users.find(user => user.email == email);
-        if(userFound && bcryptjs.compareSync(password, userFound.password)){
+        const { email, password } = req.body;
+        const userFound = users.find(user => user.email === email);
+    
+        if (userFound && userFound.password === password) {
             req.session.userLogged = userFound;
-            res.redirect("/");
-        }else{
+            
+            // if (rememberme === 'on') {
+            //     res.cookie('rememberme', userFound.email, { maxAge: 60000 * 60 });
+            // }
+            
+            res.redirect("/users/profile");
+        } else {
             res.send("El password o el email es incorrecto");
         }
     },
@@ -55,6 +62,7 @@ module.exports = {
         ...req.body,
         password: bcryptjs.hashSync(req.body.password, 10),
         image: req.file.filename
+        res.render("users/profile", {user: req.session.userLogged});
     }
     let UserCreated = User.create(userToCreate); 
     //console.log(req.body, req.file);
