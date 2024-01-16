@@ -72,28 +72,24 @@ const controller = {
     fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
     res.redirect("/");
   },
+
   destroy: (req, res) => {
-    const id = req.params.id;
-    const productToDelete = listProducts.find((product) => product.id === id);
+    const productId = req.params.id;
+    const productIndex = listProducts.findIndex((p) => p.id === productId);
 
-    if (!productToDelete) {
-      return res.status(404).send("Producto no encontrado");
+    if (productIndex !== -1) {
+      // Eliminar el producto del array
+      listProducts.splice(productIndex, 1);
+
+      // Actualizar el archivo JSON
+      fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
+
+      res.redirect("/");
+    } else {
+      res.send("El producto no existe");
     }
-
-    // Utiliza filter y asigna el resultado a listProducts
-    listProducts = listProducts.filter((product) => product.id !== id);
-
-    fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
-
-    const imagePath = path.join(
-      __dirname,
-      "../../public/img/",
-      productToDelete.img
-    );
-    fs.unlinkSync(imagePath);
-
-    res.redirect("/");
   },
+
 };
 
 module.exports = controller;

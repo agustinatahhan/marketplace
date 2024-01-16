@@ -43,5 +43,14 @@
   "password": "$2a$10$DingPzIXd0D7dmrPucy.ouwJRpH12L9rgiVtIdS.uwRMYTpnLwNqW",
   "category": "cliente",
   "image": "1705406794718_img.jpeg"
+ },
+ {
+  "id": 13,
+  "firstName": "esteban",
+  "lastName": "trejo",
+  "email": "esteban@gmail.com",
+  "password": "$2a$10$5kwvesTYazP9DY2.iZNrSe.mRpbJeCDxbvITJTsZNELgcb7Jc.6M.",
+  "category": "cliente",
+  "image": "1705416073422_img.jpg"
  }
 ]
