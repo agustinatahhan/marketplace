@@ -6,6 +6,8 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const port = 3000;
 
+app.use(express.urlencoded({ extended: false }));
+
 const routesIndex = require("./routes/index");
 const usersRoutes = require("./routes/users");
 

@@ -1,0 +1,35 @@
+/* Estilo para el contenedor del grupo de formulario */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Cambiar a dirección de columna */
+  }
+  
+  /* Estilo para las etiquetas de los campos del formulario */
+ .lbl-reg {
+    text-align: left; /* Alinear a la izquierda */
+    margin-bottom: 5px; /* Añadir un pequeño espacio entre la etiqueta y el input */
+  }
+  
+  /* Estilo para los campos de entrada del formulario */
+  .form-group input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 5px; /* Añadir un pequeño espacio entre el input y el mensaje de error */
+  }
+  
+  /* Estilo para los mensajes de error */
+  .error-msg {
+    color: red;
+    margin-top: 5px; /* Añadir espacio encima del mensaje de error */
+  }
+
+  .is-invalid {
+    border: 1px solid red; /* Borde rojo */
+  }
+  
+  /* Puedes agregar estilos específicos para el icono de error */
+  .error-icon {
+    color: red; /* Color del icono */
+    margin-left: 5px; /* Espaciado a la izquierda del icono */
+  }
