@@ -6,7 +6,12 @@
     <%- include("../partials/header.ejs") %>
 
     <main align="center" class="main-content">
-      <h2>Bienvenido/a: <span><%= user.email %></span></h2>
+      <h2>Bienvenido a Moda Mía</h2>
+      <div class="profileBox">
+        <p>Usuario: <span><%= user.firstName %> <%= user.lastName %></span></p>
+        <p>Email: <span class="email"><%= user.email %></span></p>
+      </div>
+      <img src="<%= user.image %>" alt="" />
     </main>
     <%- include("../partials/footer.ejs") %>
   </body>

@@ -7,16 +7,16 @@ const session = require("express-session");
 const port = 3000;
 // const remembermeMiddleware = require("./middleware/remembermeMiddleware");
 
-app.use(express.urlencoded({ extended: false }));
-
-const routesIndex = require("./routes/index");
-const usersRoutes = require("./routes/users");
-
 app.use(session({
   secret: "Bienvenido",
   resave: true,
   saveUninitialized: false
 }));
+app.use(express.urlencoded({ extended: false }));
+
+const routesIndex = require("./routes/index");
+const usersRoutes = require("./routes/users");
+
 // app.use(cookieParser);
 // app.use(remembermeMiddleware);
 
