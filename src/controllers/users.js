@@ -11,8 +11,9 @@ module.exports = {
   login: (req, res) => {
     res.render("users/login.ejs");
   },
+
   processLogin: (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, rememberme } = req.body;
     const userFound = users.find((user) => user.email === email);
 
     if (userFound) {
@@ -24,17 +25,28 @@ module.exports = {
           firstName: userFound.firstName,
           lastName: userFound.lastName,
           email: userFound.email
-      };
+        };
+
+        // Configurar la expiración de la sesión según tu necesidad
+        const sessionOptions = {
+          maxAge: rememberme ? 30 * 24 * 60 * 60 * 1000 : null, // 30 days if rememberme is checked, otherwise session ends when the browser is closed
+          httpOnly: true,
+          // ... otras opciones de sesión
+        };
+
+        req.session.cookie = sessionOptions;
 
         return res.redirect("/users/profile");
       }
     }
 
-    res.send("El password o el email es incorrecto");
+    return res.redirect("/users/login");
   },
+
   profile: (req, res) => {
     res.render("users/profile.ejs", { user: req.session.userLogged });
   },
+
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -51,7 +63,7 @@ module.exports = {
       return res.render("users/register.ejs", {
         errors: {
           email: {
-            msg: "Este email ya esta registrado",
+            msg: "Este email ya está registrado",
           },
         },
         oldData: req.body,
@@ -61,6 +73,7 @@ module.exports = {
     let userToCreate = {
       ...req.body,
       password: bcryptjs.hashSync(req.body.password, 10),
+      // Asumiendo que tienes la lógica para manejar la imagen del usuario
       image: req.file.filename,
     };
 
