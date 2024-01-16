@@ -43,7 +43,7 @@ const validations = [
   body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
   body("image").custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = [".jpg", ".png", ".gif"];
+    let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
     if (file) {
       const fileExtension = path.extname(file.originalname);

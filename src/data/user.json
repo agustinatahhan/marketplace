@@ -1,68 +1,5 @@
 [
  {
-  "id": 1,
-  "firstName": "Maria Agustina",
-  "lastName": "Tahhan",
-  "email": "agustahhan@gmail.com",
-  "password": "agus1234",
-  "category": "cliente",
-  "image": ""
- },
- {
-  "id": 2,
-  "firstName": "Stella Maris",
-  "lastName": "Correa Camus",
-  "email": "",
-  "password": "stella1234",
-  "category": "cliente",
-  "image": ""
- },
- {
-  "id": 3,
-  "firstName": "Francisco",
-  "lastName": "Trouve",
-  "email": "",
-  "password": "fran1234",
-  "category": "cliente",
-  "image": ""
- },
- {
-  "id": 4,
-  "firstName": "Daniel",
-  "lastName": "Brandan",
-  "email": "",
-  "password": "dani1234",
-  "category": "cliente",
-  "image": ""
- },
- {
-  "id": 5,
-  "firstName": "Matias",
-  "lastName": "Herrera Silva Areal",
-  "email": "",
-  "password": "mati1234",
-  "category": "cliente",
-  "image": ""
- },
- {
-  "id": 6,
-  "firstName": "Esteban",
-  "lastName": "Trejo",
-  "email": "",
-  "password": "esteban1234",
-  "category": "cliente",
-  "image": ""
- },
- {
-  "id": 7,
-  "firstName": "Nicolas",
-  "lastName": "Barquin",
-  "email": "nicolasbarquin1@gmail.com",
-  "password": "nico1234",
-  "category": "cliente",
-  "image": ""
- },
- {
   "id": 8,
   "firstName": "sadfasdf",
   "lastName": "asdfasdf",
@@ -88,5 +25,23 @@
   "password": "$2a$10$9riCWip/Ge1fj.367owdFuqSTylWQ9Qj/Ps7UegK8KFMBiOj5Jdry",
   "category": "cliente",
   "image": "1705364156106_img.jpg"
+ },
+ {
+  "id": 11,
+  "firstName": "agustina",
+  "lastName": "tahhan",
+  "email": "agus@gmail.com",
+  "password": "$2a$10$ZA.yE1hn5j9ORk0t/dqHL.rCYSKgqFtrdMMdrZmxX84YfXDojmxkG",
+  "category": "cliente",
+  "image": "1705406765918_img.jpeg"
+ },
+ {
+  "id": 12,
+  "firstName": "agus",
+  "lastName": "tahhan",
+  "email": "agustina@gmail.com",
+  "password": "$2a$10$DingPzIXd0D7dmrPucy.ouwJRpH12L9rgiVtIdS.uwRMYTpnLwNqW",
+  "category": "cliente",
+  "image": "1705406794718_img.jpeg"
  }
 ]
