@@ -3,7 +3,7 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
-
+const db = require("../../database/models");
 const usersPath = path.join(__dirname, "../data/user.json");
 const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 
@@ -80,4 +80,9 @@ module.exports = {
     let UserCreated = User.create(userToCreate);
     return res.redirect("/users/login");
   },
+  index: async (req, res) => {
+    const users = await db.User.findAll();
+    console.log(users);
+    
+  }
 };

@@ -5,7 +5,6 @@
   "lastName": "asdfasdf",
   "email": "asdfasdfasdfasdf@gmail.com",
   "password": "444444",
-  "category": "cliente",
   "image": "1705359357079_img.jpg"
  },
  {
@@ -14,7 +13,6 @@
   "lastName": "ffff",
   "email": "ffff@gmail.com",
   "password": "$2a$10$TOroz8fXdWpMkT7j1xOD4OPvaiFgQDTmAr5KbuthiSmmzEO5/8QYy",
-  "category": "cliente",
   "image": "1705361622301_img.jpg"
  },
  {
@@ -23,7 +21,6 @@
   "lastName": "hhhhhh",
   "email": "hhhhhh@gmail.com",
   "password": "$2a$10$9riCWip/Ge1fj.367owdFuqSTylWQ9Qj/Ps7UegK8KFMBiOj5Jdry",
-  "category": "cliente",
   "image": "1705364156106_img.jpg"
  },
  {
@@ -32,7 +29,6 @@
   "lastName": "tahhan",
   "email": "agus@gmail.com",
   "password": "$2a$10$ZA.yE1hn5j9ORk0t/dqHL.rCYSKgqFtrdMMdrZmxX84YfXDojmxkG",
-  "category": "cliente",
   "image": "1705406765918_img.jpeg"
  },
  {
@@ -41,7 +37,6 @@
   "lastName": "tahhan",
   "email": "agustina@gmail.com",
   "password": "$2a$10$DingPzIXd0D7dmrPucy.ouwJRpH12L9rgiVtIdS.uwRMYTpnLwNqW",
-  "category": "cliente",
   "image": "1705406794718_img.jpeg"
  },
  {
@@ -50,7 +45,6 @@
   "lastName": "trejo",
   "email": "esteban@gmail.com",
   "password": "$2a$10$5kwvesTYazP9DY2.iZNrSe.mRpbJeCDxbvITJTsZNELgcb7Jc.6M.",
-  "category": "cliente",
   "image": "1705416073422_img.jpg"
  }
 ]
