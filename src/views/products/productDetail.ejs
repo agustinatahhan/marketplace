@@ -15,16 +15,22 @@
           <div class="contenedorOpciones">
             <div class="formOpciones">
               <h4 class="tituloProducto"><%= product.name %></h4>
-              <h4 class="price">Categoria: <%= product.category %></h4>
+              <!-- <h4 class="price">Categoria: <%= product.category %></h4> -->
               <h4 class="price">$<%= product.price %></h4>
               <div class="cant">
                 <h4>Cantidad:</h4>
                 <input type="number" min="1" max="10" placeholder="1">
               </div>
               <div class="tallesContenedor">
-                <% product.sizes.forEach(size => { %>
-                  <div class="talleBox"><h4><%= size %></h4></div>
-                <% }) %>
+                <% if (Array.isArray(product.sizes)) { %>
+                  <% product.sizes.forEach(size => { %>
+                    <div class="talleBox" >
+                      <h4><%= size %></h4>
+                    </div>
+                  <% }) %>
+                <% } else { %>
+                  <p>No hay tallas disponibles</p>
+                <% } %>
               </div>
               <div class="promocionesBancarias">
                 <h4>

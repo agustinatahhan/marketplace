@@ -4,9 +4,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
-      Product.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+      Product.belongsTo(models.User, { foreignKey: 'userId', as: 'user', allowNull: true });
       Product.belongsToMany(models.Order, { through: 'OrderDetail', foreignKey: 'productId', as: 'orders' });
-      Product.belongsToMany(models.Sizes, { through: 'Products_Sizes', foreignKey: 'productId', otherKey: 'sizes_id', as: 'sizes' });
     }
   }
 
@@ -31,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     img: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    sizes: {
+      type: DataTypes.JSON, 
+      allowNull: true,
     },
     userId: {
       type: DataTypes.INTEGER,

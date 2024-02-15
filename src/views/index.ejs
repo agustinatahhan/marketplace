@@ -36,15 +36,15 @@
                     src="/img/<%= product.img %>"
                     alt="<%= product.name %>"
                   />
-                  <h4><%= product.name %></h4>
+                  <h4 style="text-transform: capitalize;"><%= product.name %></h4>
                   <h6>$<%= product.price %></h6>
                 </a>
 
                 <a href="/edit/<%= product.id %>">
-                  <button>Editar</button>
+                  <button class="buttonsIndex">Editar</button>
                 </a>
 
-                <button onclick="deleteProduct('<%= product.id %>')">Eliminar</button>
+                <button class="buttonsIndex" onclick="deleteProduct('<%= product.id %>')">Eliminar</button>
               </div>
 
             </div>

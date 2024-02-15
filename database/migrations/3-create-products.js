@@ -25,13 +25,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      sizes: {
+        type: Sequelize.JSON, // Nueva columna para almacenar tallas
+        allowNull: true,
+      },
       userId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'users',
           key: 'id',
         },
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         type: Sequelize.DATE,

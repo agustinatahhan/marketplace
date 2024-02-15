@@ -1,95 +1,149 @@
-const fs = require("fs");
-const path = require("path");
-const { v4: uuidv4 } = require("uuid");
-
-const pathProducts = path.join(__dirname, "../data/products.json");
-const listProductsJson = fs.readFileSync(pathProducts, "utf-8");
-const listProducts = JSON.parse(listProductsJson);
+// const fs = require("fs");
+// const path = require("path");
+// const { v4: uuidv4 } = require("uuid");
+// const pathProducts = path.join(__dirname, "../data/products.json");
+// const listProductsJson = fs.readFileSync(pathProducts, "utf-8");
+// const listProducts = JSON.parse(listProductsJson);
+const db = require("../../database/models");
 
 const controller = {
-  index: (req, res) => res.render("index", { listProducts }),
+  index: async (req, res) => {
+    try {
+      const listProducts = await db.Product.findAll();
+      res.render("index", { listProducts });
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      res.status(500).send("Internal Server Error");
+    }
+  },
 
   login: (req, res) => res.render("users/login"),
   register: (req, res) => res.render("users/register"),
   cart: (req, res) => res.render("products/productCart"),
 
-  detail: (req, res) => {
-    const productId = req.params.id;
-    const product = listProducts.find((p) => p.id === productId);
-    res.render("products/productDetail", { product });
+  detail: async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      // const product = listProducts.find((p) => p.id === productId);
+      const product = await db.Product.findOne({
+        where: {
+          id: id,
+        },
+      });
+
+      if (product) {
+        res.render("products/productDetail", { product });
+      } else {
+        res.status(404).send("Product not found");
+      }
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+      res.status(500).send("Internal Server Error");
+    }
   },
 
   getFormProduct: (req, res) => res.render("products/createProductForm"),
 
-  postProduct: (req, res) => {
-    console.log("req.body:", req.body);
-    console.log("req.file:", req.file);
+  postProduct: async (req, res) => {
+    try {
+        const { name, price, description, sizes } = req.body;
+console.log(req.body)
+        if (!name || !price || !description) {
+            return res.status(400).send("Todos los campos son obligatorios");
+        }
 
-    const newProduct = {
-      id: uuidv4(),
-      ...req.body,
-      img: req.file.filename || "default.png",
-    };
-    listProducts.push(newProduct);
+        const newProduct = await db.Product.create({
+            name,
+            price,
+            description,
+            img: req.file.filename || "default.png",
+            sizes: sizes || [],
+        });
 
-    console.log("listProducts:", listProducts);
-
-    let listProductsJSON = JSON.stringify(listProducts, null, " ");
-    fs.writeFileSync(pathProducts, listProductsJSON);
-
-    res.redirect("/");
-  },
-
-  getEditForm: (req, res) => {
-    const id = req.params.id;
-    console.log("ID from URL:", id);
-
-    const product = listProducts.find(
-      (clothes) => clothes.id.toString() === id.toString()
-    );
-    if (product) {
-      res.render("products/updateProductForm", { product });
-    } else {
-      res.send("El producto no existe");
+        res.redirect(`/`);
+    } catch (error) {
+        console.error("Error creating product:", error);
+        res.status(500).send("Internal Server Error");
     }
   },
 
-  putCreate: (req, res) => {
+
+  getEditForm: async (req, res) => {
     const { id } = req.params;
-    const { name, description, price, sizes, category } = req.body;
-    const productToEdit = listProducts.find((clothes) => clothes.id == id);
 
-    productToEdit.name = name || productToEdit.name;
-    productToEdit.description = description || productToEdit.description;
-    productToEdit.price = price || productToEdit.price;
-    productToEdit.img = req.file.filename || productToEdit.img;
+    try {
+      const product = await db.Product.findByPk(id);
 
-    if (sizes && Array.isArray(sizes)) {
-      productToEdit.sizes = sizes;
-    }
-
-    productToEdit.category = category || productToEdit.category;
-    fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
-    res.redirect("/");
-  },
-
-  destroy: (req, res) => {
-    const productId = req.params.id;
-    const productIndex = listProducts.findIndex((p) => p.id === productId);
-
-    if (productIndex !== -1) {
-      // Eliminar el producto del array
-      listProducts.splice(productIndex, 1);
-
-      // Actualizar el archivo JSON
-      fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
-
-      res.redirect("/");
-    } else {
-      res.send("El producto no existe");
+      if (product) {
+        res.render("products/updateProductForm", { product });
+      } else {
+        res.send("El producto no existe");
+      }
+    } catch (error) {
+      console.error("Error fetching product details for edit:", error);
+      res.status(500).send("Internal Server Error");
     }
   },
 
+  putCreate: async (req, res) => {
+    const { id } = req.params;
+    const { name, description, price} = req.body;
+
+    try {
+      const productToEdit = await db.Product.findByPk(id);
+
+      if (productToEdit) {
+        productToEdit.name = name || productToEdit.name;
+        productToEdit.description = description || productToEdit.description;
+        productToEdit.price = price || productToEdit.price;
+        productToEdit.img = req.file.filename || productToEdit.img;
+
+        // if (sizes && Array.isArray(sizes)) {
+        //   await productToEdit.setSizes([]); 
+        //   const newSizes = await db.Sizes.findAll({ where: { id: sizes } });
+        //   await productToEdit.addSizes(newSizes);
+        // }
+
+        await productToEdit.save();
+
+        res.redirect("/");
+      } else {
+        res.send("El producto no existe");
+      }
+    } catch (error) {
+      console.error("Error updating product:", error);
+      res.status(500).send("Internal Server Error");
+    }
+  },
+
+  destroy: async (req, res) => {
+    const {id} = req.params;
+    try {
+      // const productIndex = listProducts.findIndex((p) => p.id === productId);
+  
+      // if (productIndex !== -1) {
+      //   // Eliminar el producto del array
+      //   listProducts.splice(productIndex, 1);
+  
+      //   // Actualizar el archivo JSON
+      //   fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
+  
+      //   res.redirect("/");
+      // } else {
+      //   res.send("El producto no existe");
+      // }
+      const productToDelete = await db.Product.findByPk(id);
+      if(productToDelete){
+        await productToDelete.destroy();
+        res.redirect("/");
+      }else{
+        res.send("El producto no existe");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 module.exports = controller;

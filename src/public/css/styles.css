@@ -132,6 +132,21 @@ nav {
   transform: scale(1.2);
 }
 
+.buttonsIndex{
+  border: none;
+  background: none;
+  background-color: #000;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.buttonsIndex:hover{
+  background-color: grey;
+}
+
 @media screen and (max-width: 1024px) {
   .icons {
     gap: 1rem;
