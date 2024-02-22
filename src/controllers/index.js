@@ -47,24 +47,24 @@ const controller = {
 
   postProduct: async (req, res) => {
     try {
-        const { name, price, description, sizes } = req.body;
-console.log(req.body)
-        if (!name || !price || !description) {
-            return res.status(400).send("Todos los campos son obligatorios");
-        }
+      const { name, price, description, sizes } = req.body;
+      console.log(req.body)
+      if (!name || !price || !description) {
+        return res.status(400).send("Todos los campos son obligatorios");
+      }
 
-        const newProduct = await db.Product.create({
-            name,
-            price,
-            description,
-            img: req.file.filename || "default.png",
-            sizes: sizes || [],
-        });
+      const newProduct = await db.Product.create({
+        name,
+        price,
+        description,
+        img: req.file.filename || "default.png",
+        sizes: sizes || [],
+      });
 
-        res.redirect(`/`);
+      res.redirect(`/`);
     } catch (error) {
-        console.error("Error creating product:", error);
-        res.status(500).send("Internal Server Error");
+      console.error("Error creating product:", error);
+      res.status(500).send("Internal Server Error");
     }
   },
 
@@ -88,8 +88,8 @@ console.log(req.body)
 
   putCreate: async (req, res) => {
     const { id } = req.params;
-    const { name, description, price} = req.body;
-    const sizes = req.body['sizes[]'];
+    const { name, description, price, sizes } = req.body;
+    // const sizes = req.body['sizes[]'];
 
     try {
       const productToEdit = await db.Product.findByPk(id);
@@ -98,20 +98,18 @@ console.log(req.body)
         productToEdit.name = name || productToEdit.name;
         productToEdit.description = description || productToEdit.description;
         productToEdit.price = price || productToEdit.price;
-        // productToEdit.img = req.file.filename || productToEdit.img;
 
         // Verificar si se cargó un nuevo archivo
         console.log(sizes)
         if (req.file && req.file.filename) {
           productToEdit.img = req.file.filename; // Asignar el nombre del archivo cargado
-      }
-      
-       // productToEdit.sizes = JSON.parse(sizes) || JSON.parse(productToEdit.sizes);
+        }
 
         // Verificar si sizes está definido y no es null
-    if (sizes !== undefined && sizes !== null) {
-      productToEdit.sizes = JSON.parse(sizes) || JSON.parse(productToEdit.sizes);
-    }
+        if (sizes !== undefined && sizes !== null) {
+          // productToEdit.sizes = JSON.parse(sizes) || JSON.parse(productToEdit.sizes);
+          productToEdit.sizes = sizes || productToEdit.sizes;
+        }
 
         // if (sizes && Array.isArray(sizes)) {
         //   await productToEdit.setSizes([]); 
@@ -132,26 +130,26 @@ console.log(req.body)
   },
 
   destroy: async (req, res) => {
-    const {id} = req.params;
+    const { id } = req.params;
     try {
       // const productIndex = listProducts.findIndex((p) => p.id === productId);
-  
+
       // if (productIndex !== -1) {
       //   // Eliminar el producto del array
       //   listProducts.splice(productIndex, 1);
-  
+
       //   // Actualizar el archivo JSON
       //   fs.writeFileSync(pathProducts, JSON.stringify(listProducts, null, " "));
-  
+
       //   res.redirect("/");
       // } else {
       //   res.send("El producto no existe");
       // }
       const productToDelete = await db.Product.findByPk(id);
-      if(productToDelete){
+      if (productToDelete) {
         await productToDelete.destroy();
         res.redirect("/");
-      }else{
+      } else {
         res.send("El producto no existe");
       }
     } catch (error) {
