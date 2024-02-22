@@ -31,7 +31,7 @@ const controller = {
           id: id,
         },
       });
-
+      // console.log("Product found:", Array.isArray(product.sizes) );
       if (product) {
         res.render("products/productDetail", { product });
       } else {
@@ -89,6 +89,7 @@ console.log(req.body)
   putCreate: async (req, res) => {
     const { id } = req.params;
     const { name, description, price} = req.body;
+    const sizes = req.body['sizes[]'];
 
     try {
       const productToEdit = await db.Product.findByPk(id);
@@ -97,7 +98,20 @@ console.log(req.body)
         productToEdit.name = name || productToEdit.name;
         productToEdit.description = description || productToEdit.description;
         productToEdit.price = price || productToEdit.price;
-        productToEdit.img = req.file.filename || productToEdit.img;
+        // productToEdit.img = req.file.filename || productToEdit.img;
+
+        // Verificar si se cargó un nuevo archivo
+        console.log(sizes)
+        if (req.file && req.file.filename) {
+          productToEdit.img = req.file.filename; // Asignar el nombre del archivo cargado
+      }
+      
+       // productToEdit.sizes = JSON.parse(sizes) || JSON.parse(productToEdit.sizes);
+
+        // Verificar si sizes está definido y no es null
+    if (sizes !== undefined && sizes !== null) {
+      productToEdit.sizes = JSON.parse(sizes) || JSON.parse(productToEdit.sizes);
+    }
 
         // if (sizes && Array.isArray(sizes)) {
         //   await productToEdit.setSizes([]); 

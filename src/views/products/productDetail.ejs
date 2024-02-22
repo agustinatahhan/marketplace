@@ -21,7 +21,7 @@
                 <h4>Cantidad:</h4>
                 <input type="number" min="1" max="10" placeholder="1">
               </div>
-              <div class="tallesContenedor">
+              <!-- <div class="tallesContenedor">
                 <% if (Array.isArray(product.sizes)) { %>
                   <% product.sizes.forEach(size => { %>
                     <div class="talleBox" >
@@ -31,7 +31,29 @@
                 <% } else { %>
                   <p>No hay tallas disponibles</p>
                 <% } %>
+              </div> -->
+
+              <div class="tallesContenedor">
+
+                <% if (product.sizes && typeof product.sizes === 'string') { %>
+                  <% try { %>
+                    <% const sizesArray = JSON.parse(product.sizes); %>
+                    <% if (Array.isArray(sizesArray) && sizesArray.length > 0) { %>
+                      <h3>Talles:</h3>
+                      
+                        <% sizesArray.forEach(size => { %>
+                          <div class="talleBox" >
+                          <h4>[<%= size %>]</h4>
+                          </div>
+                        <% }); %>
+                      
+                    <% } %>
+                  <% } catch (error) { %>
+                    <p>Error parsing sizes data</p>
+                  <% } %>
+                <% } %>
               </div>
+
               <div class="promocionesBancarias">
                 <h4>
                   Promociones Bancarias <i class="fa-solid fa-credit-card"></i>

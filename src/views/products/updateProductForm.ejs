@@ -46,11 +46,17 @@
               required
             />
           </div>
-          <div>
+          <!-- <div>
             <label><input type="radio" name="sizes" value="S" <%= product.sizes.includes('S') ? 'checked' : '' %>/> S</label>
             <label><input type="radio" name="sizes" value="M" <%= product.sizes.includes('M') ? 'checked' : '' %>/> M</label>
             <label><input type="radio" name="sizes" value="L" <%= product.sizes.includes('L') ? 'checked' : '' %>/> L</label>
             <label><input type="radio" name="sizes" value="XL" <%= product.sizes.includes('XL') ? 'checked' : '' %>/> XL</label>
+          </div> -->
+          <div>
+            <label><input type="checkbox" name="sizes[]" value="S" <%= product.sizes.includes('S') ? 'checked' : '' %>> S</label>
+            <label><input type="checkbox" name="sizes[]" value="M" <%= product.sizes.includes('M') ? 'checked' : '' %>> M</label>
+            <label><input type="checkbox" name="sizes[]" value="L" <%= product.sizes.includes('L') ? 'checked' : '' %>> L</label>
+            <label><input type="checkbox" name="sizes[]" value="XL" <%= product.sizes.includes('XL') ? 'checked' : '' %>> XL</label>
           </div>
           
           <!-- <div>
@@ -64,8 +70,12 @@
           </div> -->
           <div class="imgProduct">
             <p>Imagen:</p>
-            <input type="file" name="img" id="img" required />
-          </div>
+            <% if (product.img) { %>
+                <img src="/img/<%= product.img %>" alt="Imagen actual del producto" width="100px">
+            <% } %>
+            <input type="file" name="img" id="img" />
+        </div>
+        
 
           <div class="btnForm">
             <button type="reset">Borrar</button>
