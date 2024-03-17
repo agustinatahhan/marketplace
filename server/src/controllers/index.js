@@ -47,9 +47,8 @@ const controller = {
 
   postProduct: async (req, res) => {
     try {
-      const { name, price, description, sizes } = req.body;
-      console.log(req.body)
-      if (!name || !price || !description) {
+      const { name, price, description, sizes, quantity } = req.body;
+      if (!name || !price || !description || !quantity) {
         return res.status(400).send("Todos los campos son obligatorios");
       }
 
@@ -57,6 +56,7 @@ const controller = {
         name,
         price,
         description,
+        quantity,
         img: req.file.filename || "default.png",
         sizes: sizes || [],
       });
@@ -88,7 +88,7 @@ const controller = {
 
   putCreate: async (req, res) => {
     const { id } = req.params;
-    const { name, description, price, sizes } = req.body;
+    const { name, description, price, sizes, quantity } = req.body;
     // const sizes = req.body['sizes[]'];
 
     try {
@@ -98,6 +98,7 @@ const controller = {
         productToEdit.name = name || productToEdit.name;
         productToEdit.description = description || productToEdit.description;
         productToEdit.price = price || productToEdit.price;
+        productToEdit.quantity = quantity || productToEdit.quantity;
 
         // Verificar si se cargó un nuevo archivo
         console.log(sizes)

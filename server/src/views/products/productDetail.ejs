@@ -8,7 +8,6 @@
     <main class="main-content">
       <div class="columnas">
         <div class="columna">
-          <!-- Utiliza la variable 'product' que viene del controlador -->
           <img class="imgDetalle" src="/img/<%= product.img %>">
         </div>
         <div class="columna">
@@ -19,7 +18,7 @@
               <h4 class="price">$<%= product.price %></h4>
               <div class="cant">
                 <h4>Cantidad:</h4>
-                <input type="number" min="1" max="10" placeholder="1">
+                <input type="number" min="1" max="<%= product.quantity %>" placeholder="1">
               </div>
               <!-- <div class="tallesContenedor">
                 <% if (Array.isArray(product.sizes)) { %>
@@ -39,7 +38,7 @@
                   <% try { %>
                     <% const sizesArray = JSON.parse(product.sizes); %>
                     <% if (Array.isArray(sizesArray) && sizesArray.length > 0) { %>
-                      <h3>Talles:</h3>
+                      <h4>Talles:</h4>
                       
                         <% sizesArray.forEach(size => { %>
                           <div class="talleBox" >

@@ -46,6 +46,18 @@
               required
             />
           </div>
+          <div>
+            <input
+              class="ctrl"
+              type="number"
+              name="quantity"
+              id="quantity"
+              min="1"
+              max="10"
+              placeholder="<%= product.quantity %>"
+              required
+            />
+          </div>
           <!-- <div>
             <label><input type="radio" name="sizes" value="S" <%= product.sizes.includes('S') ? 'checked' : '' %>/> S</label>
             <label><input type="radio" name="sizes" value="M" <%= product.sizes.includes('M') ? 'checked' : '' %>/> M</label>

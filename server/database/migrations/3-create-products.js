@@ -26,8 +26,13 @@ module.exports = {
         allowNull: false,
       },
       sizes: {
-        type: Sequelize.JSON, // Nueva columna para almacenar tallas
+        type: Sequelize.JSON, 
         allowNull: true,
+      },
+      quantity: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        defaultValue: 1,
       },
       userId: {
         type: Sequelize.INTEGER,
