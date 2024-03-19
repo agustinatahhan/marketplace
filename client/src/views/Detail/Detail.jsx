@@ -32,8 +32,7 @@ const Detail = () => {
     <div className={style.mainContent}>
       <div className={style.columnas}>
         <div className={style.columna}>
-          <img className={style.imgDetalle} src={`/img/${product.img}`} />
-        </div>
+        <img className={style.imgDetalle} src={`http://localhost:3000/img/${product.img}`} alt={product.name} />        </div>
         <div className={style.columna}>
           <div className={style.contenedorOpciones}>
             <div className={style.formOpciones}>

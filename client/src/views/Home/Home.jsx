@@ -72,8 +72,7 @@ const Home = () => {
                   <div className={style.carrousel} key={product.id}>
                     <div>
                       <NavLink to={`/products/detail/${product.id}`}>
-                        <img src={product.img} alt={product.name} />
-                        <h4>{product.name}</h4>
+                      <img src={`http://localhost:3000/img/${product.img}`} alt={product.name} />                        <h4>{product.name}</h4>
                         <h6>${product.price}</h6>
                       </NavLink>
                     </div>

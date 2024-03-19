@@ -15,11 +15,11 @@ const Admin = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    // getUsers();
+    getUsers();
     getProducts();
   }, []);
 
-  const [productsPerPage] = useState(5);
+  const [productsPerPage] = useState(2);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products?.slice(
@@ -34,14 +34,14 @@ const Admin = () => {
     }
   };
 
-  //   const getUsers = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:3000/users");
-  //       setUsers(response.data);
-  //     } catch (error) {
-  //       console.error("Error al obtener los usuarios:", error);
-  //     }
-  //   };
+    const getUsers = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/users");
+        setUsers(response.data);
+      } catch (error) {
+        console.error("Error al obtener los usuarios:", error);
+      }
+    };
 
   const getProducts = async () => {
     try {
@@ -97,7 +97,7 @@ const Admin = () => {
   return (
     <>
       <div className={style.view}>
-        <div>
+        <div className={style.content}>
           <h3>Productos:</h3>
           <button className={style.buttonCreate} onClick={(event) => {handleCreate(event)}}>
             <i className="fa-solid fa-plus fa-sm"></i> Crear Producto
@@ -172,23 +172,23 @@ const Admin = () => {
             </button>
           </div>
         )}
-        <div>
+        <div className={style.content}>
           <h3>Usuarios:</h3>
           <table className={style.productTable}>
             <thead>
               <tr>
                 <th>Nombre</th>
+                <th>Apellido</th>
                 <th>Email</th>
-                <th>Teléfono</th>
               </tr>
             </thead>
             <tbody>
               {Array.isArray(users) ? (
                 users.map((user) => (
                   <tr key={user.id}>
-                    <td>{user.name}</td>
+                    <td>{user.firstName}</td>
+                    <td>{user.lastName}</td>
                     <td>{user.email}</td>
-                    <td>{user.phone}</td>
                   </tr>
                 ))
               ) : (

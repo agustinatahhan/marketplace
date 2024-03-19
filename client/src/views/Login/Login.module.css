@@ -1,0 +1,75 @@
+.mainContent{
+    padding: 6rem 0;
+}
+.formRegister {
+    width: 400px;
+    background: #d1b292;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px #adadad;
+  }
+  
+  .formRegister h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .ctrl {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    font-family: "Satoshi", sans-serif;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    box-shadow: 7px 13px 37px #977e64;
+  }
+  
+  .formRegister p {
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+  }
+  
+  .formRegister a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .formRegister a:hover {
+    color: white;
+  }
+  
+  .formRegister .btn {
+    width: 100%;
+    background: #000;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family: "Satoshi", sans-serif;
+    cursor: pointer;
+  }
+  
+  .formRegister .btn:hover {
+    background: #f0dcc7;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  @media (max-width: 767px ){
+    .formRegister {
+      width: 90%;
+      height: fit-content;
+    }
+  }

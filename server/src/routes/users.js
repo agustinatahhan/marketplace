@@ -30,6 +30,7 @@ const {
   processLogin,
   profile,
   processRegister,
+  getAllUsers
 } = require("../controllers/users");
 const userLoggedMiddleware = require("../middleware/userLoggedMiddleware");
 
@@ -41,23 +42,20 @@ const validations = [
   // .isEmail().withMessage('Debes escribir un formato de correo valido'),
 
   body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
-  body("image").custom((value, { req }) => {
-    let file = req.file;
-    let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+  // body("image").custom((value, { req }) => {
+  //   let file = req.file;
+  //   let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
-    if (file) {
-      const fileExtension = path.extname(file.originalname);
-      if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join()}`
-        );
-      }
-    } else {
-      throw new Error("Tienes que subir una imagen");
-    }
-
-    return true;
-  }),
+  //   if (file) {
+  //     const fileExtension = path.extname(file.originalname);
+  //     if (!acceptedExtensions.includes(fileExtension)) {
+  //       throw new Error(
+  //         `Las extensiones de archivo permitidas son ${acceptedExtensions.join()}`
+  //       );
+  //     }
+  //   } else {
+  //     throw new Error("Tienes que subir una imagen");
+  //   }
 ];
 
 router.get("/login", login);
@@ -71,5 +69,6 @@ router.post(
 );
 
 router.get("/profile", userLoggedMiddleware, profile);
+router.get('/', getAllUsers);
 
 module.exports = router;
