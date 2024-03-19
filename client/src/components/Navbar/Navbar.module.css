@@ -1,0 +1,106 @@
+nav {
+  width: 100%;
+  height: 6rem;
+  background: linear-gradient(to right, #d1b292, #dac3a3, #e5d2b3, #eeddc3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  width: 4.5rem;
+  height: 3rem;
+  margin-right: 18rem;
+}
+
+.inputSearch {
+    position: relative;
+  }
+  
+  .inputSearch input {
+    width: 20rem;
+    height: 2rem;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 1rem;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .inputSearch input::placeholder {
+    letter-spacing: 2px;
+  }
+  
+  .inputSearch .lupa {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 3%;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-left: 18rem;
+    cursor: pointer;
+  }
+  
+  .icons svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .icons svg:hover {
+    transform: scale(1.2);
+  }
+  
+  .buttonsIndex{
+    border: none;
+    background: none;
+    background-color: #000;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .buttonsIndex:hover{
+    background-color: grey;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .icons {
+      gap: 1rem;
+      margin-left: 3rem;
+    }
+  
+    .logo {
+      margin-right: 3rem;
+    }
+  
+    .inputSearch {
+      display: none;
+    }
+  
+    .inputSearch .lupa {
+      display: none;
+    }
+  
+    .navbar input {
+      display: none;
+    }
+  }
+  

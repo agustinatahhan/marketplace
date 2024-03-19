@@ -1,0 +1,117 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.view h3 {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+
+.buttonCreate {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 5px;
+  background-color: #f2f2f2;
+  color: black;
+  border-radius: 2px;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+
+.productTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productTable th,
+.productTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.productTable th {
+  background-color: #f2f2f2;
+}
+
+.productTable tr:hover {
+  background-color: #f2f2f2;
+}
+
+.buttons {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.buttons:hover,
+.buttonCreate:hover {
+  transform: scale(1.2);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.popup,
+.container button {
+  justify-content: center;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(162, 162, 162, 0.774);
+  padding: 20px;
+  box-shadow: 0 15px 25px rgba(80, 79, 79, 0.896);
+  z-index: 9999;
+  border-radius: 13px;
+  width: 40%;
+  height: 80%;
+  justify-content: center;
+  text-align: center;
+  font-family: inherit;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  font-size: 12px;
+}
+
+.paginationButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.paginationButton:hover {
+  text-decoration: none;
+}
+.paginationButton:disabled {
+  color: grey;
+}
+.paginationButton.active {
+  color: white;
+  font-weight: bold;
+}

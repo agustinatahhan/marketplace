@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 const path = require("path");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
@@ -13,7 +14,7 @@ app.use(session({
   saveUninitialized: false
 }));
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors());
 const routesIndex = require("./routes/index");
 const usersRoutes = require("./routes/users");
 
