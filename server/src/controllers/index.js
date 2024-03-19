@@ -39,7 +39,6 @@ const controller = {
       // } else {
       //   res.status(404).send("Product not found");
       // }
-      console.log(product);
       return res.status(200).json(product);
     } catch (error) {
       console.error("Error fetching product details:", error);
@@ -105,7 +104,6 @@ const controller = {
         productToEdit.quantity = quantity || productToEdit.quantity;
 
         // Verificar si se cargó un nuevo archivo
-        console.log(sizes)
         if (req.file && req.file.filename) {
           productToEdit.img = req.file.filename; // Asignar el nombre del archivo cargado
         }
