@@ -10,9 +10,11 @@ const controller = {
   index: async (req, res) => {
     try {
       const listProducts = await db.Product.findAll();
-      res.render("index", { listProducts });
+      const data = listProducts.map(prod => prod.dataValues);
+      // res.render("index", { listProducts });
+      return res.status(200).json(data);
     } catch (error) {
-      console.error("Error fetching products:", error);
+      // console.error("Error fetching products:", error);
       res.status(500).send("Internal Server Error");
     }
   },
@@ -32,11 +34,13 @@ const controller = {
         },
       });
       // console.log("Product found:", Array.isArray(product.sizes) );
-      if (product) {
-        res.render("products/productDetail", { product });
-      } else {
-        res.status(404).send("Product not found");
-      }
+      // if (product) {
+      //   res.render("products/productDetail", { product });
+      // } else {
+      //   res.status(404).send("Product not found");
+      // }
+      console.log(product);
+      return res.status(200).json(product);
     } catch (error) {
       console.error("Error fetching product details:", error);
       res.status(500).send("Internal Server Error");
@@ -51,23 +55,23 @@ const controller = {
       if (!name || !price || !description || !quantity) {
         return res.status(400).send("Todos los campos son obligatorios");
       }
-
+  
       const newProduct = await db.Product.create({
         name,
         price,
         description,
         quantity,
-        img: req.file.filename || "default.png",
+        img: req.file.filename || "default.png", 
         sizes: sizes || [],
       });
-
+  
       res.redirect(`/`);
     } catch (error) {
-      console.error("Error creating product:", error);
+      console.error("Error al crear el producto:", error);
       res.status(500).send("Internal Server Error");
     }
   },
-
+  
 
   getEditForm: async (req, res) => {
     const { id } = req.params;
