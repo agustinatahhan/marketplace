@@ -6,20 +6,23 @@ const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const port = 3000;
+const { checkLoggedInWithCookie } = require('./middleware/userLoggedCookie');
+
 // const remembermeMiddleware = require("./middleware/remembermeMiddleware");
 
 app.use(session({
   secret: "Bienvenido",
-  resave: true,
-  saveUninitialized: false
 }));
 app.use(express.urlencoded({ extended: false }));
+
+app.use(cookieParser());
+
+// Agregar el middleware para verificar la sesión con la cookie antes de las rutas
+app.use(checkLoggedInWithCookie);
+
 app.use(cors());
 const routesIndex = require("./routes/index");
 const usersRoutes = require("./routes/users");
-
-// app.use(cookieParser);
-// app.use(remembermeMiddleware);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

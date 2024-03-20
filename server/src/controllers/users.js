@@ -12,7 +12,7 @@ module.exports = {
   },
    processLogin : async (req, res) => {
     try {
-      const { email, password } = req.body;
+      const { email, password , rememberme } = req.body;
   
       const userFound = await db.User.findOne({
         where: { email: email },
@@ -23,6 +23,14 @@ module.exports = {
   
         if (passwordMatch) {
           req.session.userId = userFound.id;
+          req.session.name = userFound.firstName;
+          req.session.client = userFound.client;
+
+          // Si se ha marcado "Recordar mi sesión", configurar una cookie que expire en 7 días
+        if (rememberme) {
+          res.cookie('userId', userFound.id, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
+        }
+
             return res.status(200).json({ success: true, message: "Inicio de sesión exitoso" });
         }
       }
