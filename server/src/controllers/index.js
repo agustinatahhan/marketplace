@@ -5,12 +5,6 @@
 // const listProductsJson = fs.readFileSync(pathProducts, "utf-8");
 // const listProducts = JSON.parse(listProductsJson);
 const db = require("../../database/models");
-<<<<<<< Updated upstream
-const { validationResult } = require("express-validator");
-
-
-=======
->>>>>>> Stashed changes
 const controller = {
   // index: async (req, res) => {
   //   try {
@@ -34,9 +28,8 @@ const controller = {
             },
         });
 
-        console.log(listProducts); // Agrega este log para verificar los datos antes de enviar la respuesta
-
         const data = listProducts.map(prod => prod.dataValues);
+
         return res.status(200).json(data);
     } catch (error) {
         console.error("Error fetching products:", error);
@@ -75,33 +68,8 @@ const controller = {
   getFormProduct: (req, res) => res.render("products/createProductForm"),
   postProduct: async (req, res) => {
     try {
-<<<<<<< Updated upstream
-        const { name, price, description, sizes, quantity } = req.body;
-        
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()){
-            let imgFileName = "default.png";
-            if(req.file && req.file.filename) {
-                imgFileName = req.file.filename;
-            }
-
-            const newProduct = await db.Product.create({
-                name,
-                price,
-                description,
-                quantity,
-                img: imgFileName,
-                sizes: sizes || [],
-            });
-
-            res.redirect(`/`);
-        } else {
-            res.render("products/createProductForm", { errors: errors.array(), old: req.body});
-        }
-=======
       const { name, price, description, sizes, quantity, category } = req.body;
-      console.log(category);
+      console.log(req.body);
       if (!name || !price || !description || !quantity) {
         return res.status(400).send("Todos los campos son obligatorios");
       }
@@ -121,17 +89,14 @@ const controller = {
       });
   
       await newProduct.addCategory(selectedCategory);
-  
+      console.log(newProduct);
+
       res.redirect(`/`);
->>>>>>> Stashed changes
     } catch (error) {
         console.error("Error al crear el producto:", error);
         res.status(500).send("Internal Server Error");
     }
-}
-,
-  
-
+},
   
 
   getEditForm: async (req, res) => {
