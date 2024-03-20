@@ -5,21 +5,45 @@
 // const listProductsJson = fs.readFileSync(pathProducts, "utf-8");
 // const listProducts = JSON.parse(listProductsJson);
 const db = require("../../database/models");
+<<<<<<< Updated upstream
 const { validationResult } = require("express-validator");
 
 
+=======
+>>>>>>> Stashed changes
 const controller = {
+  // index: async (req, res) => {
+  //   try {
+  //     const listProducts = await db.Product.findAll();
+  //     const data = listProducts.map(prod => prod.dataValues);
+  //     // res.render("index", { listProducts });
+  //     return res.status(200).json(data);
+  //   } catch (error) {
+  //     // console.error("Error fetching products:", error);
+  //     res.status(500).send("Internal Server Error");
+  //   }
+  // },
   index: async (req, res) => {
     try {
-      const listProducts = await db.Product.findAll();
-      const data = listProducts.map(prod => prod.dataValues);
-      // res.render("index", { listProducts });
-      return res.status(200).json(data);
+        const listProducts = await db.Product.findAll({
+            include: {
+                model: db.Category,
+                as: 'categories',
+                attributes: ['name'],
+                through: { attributes: [] },
+            },
+        });
+
+        console.log(listProducts); // Agrega este log para verificar los datos antes de enviar la respuesta
+
+        const data = listProducts.map(prod => prod.dataValues);
+        return res.status(200).json(data);
     } catch (error) {
-      // console.error("Error fetching products:", error);
-      res.status(500).send("Internal Server Error");
+        console.error("Error fetching products:", error);
+        return res.status(500).send("Internal Server Error");
     }
-  },
+},
+  
 
   login: (req, res) => res.render("users/login"),
   register: (req, res) => res.render("users/register"),
@@ -30,17 +54,17 @@ const controller = {
 
     try {
       // const product = listProducts.find((p) => p.id === productId);
-      const product = await db.Product.findOne({
-        where: {
-          id: id,
-        },
-      });
       // console.log("Product found:", Array.isArray(product.sizes) );
       // if (product) {
       //   res.render("products/productDetail", { product });
       // } else {
       //   res.status(404).send("Product not found");
       // }
+      const product = await db.Product.findOne({
+        where: {
+          id: id,
+        },
+      });
       return res.status(200).json(product);
     } catch (error) {
       console.error("Error fetching product details:", error);
@@ -49,9 +73,9 @@ const controller = {
   },
 
   getFormProduct: (req, res) => res.render("products/createProductForm"),
-
   postProduct: async (req, res) => {
     try {
+<<<<<<< Updated upstream
         const { name, price, description, sizes, quantity } = req.body;
         
         let errors = validationResult(req);
@@ -75,12 +99,39 @@ const controller = {
         } else {
             res.render("products/createProductForm", { errors: errors.array(), old: req.body});
         }
+=======
+      const { name, price, description, sizes, quantity, category } = req.body;
+      console.log(category);
+      if (!name || !price || !description || !quantity) {
+        return res.status(400).send("Todos los campos son obligatorios");
+      }
+  
+      const selectedCategory = await db.Category.findByPk(category);
+      if (!selectedCategory) {
+        return res.status(404).send("La categoría especificada no existe");
+      }
+  
+      const newProduct = await db.Product.create({
+        name,
+        price,
+        description,
+        quantity,
+        img: req.file.filename || "default.png",
+        sizes: sizes || [],
+      });
+  
+      await newProduct.addCategory(selectedCategory);
+  
+      res.redirect(`/`);
+>>>>>>> Stashed changes
     } catch (error) {
         console.error("Error al crear el producto:", error);
         res.status(500).send("Internal Server Error");
     }
 }
 ,
+  
+
   
 
   getEditForm: async (req, res) => {

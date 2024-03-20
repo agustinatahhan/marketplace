@@ -19,7 +19,11 @@ const Admin = () => {
     getProducts();
   }, []);
 
-  const [productsPerPage] = useState(2);
+  const productsQuantity = products.length;
+  const usersQuantity = users.length;
+
+
+  const [productsPerPage] = useState(5);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products?.slice(
@@ -93,22 +97,37 @@ const Admin = () => {
     setShowCreate(false);
     setShowBackdropCreate(false);
   };
+  const getLastUser = () => {
+    if (users.length > 0) {
+      return users[users.length - 1];
+    }
+    return null; 
+  };
+
+  const getLastProduct = () => {
+    if (products.length > 0) {
+      return products[products.length - 1];
+    }
+    return null; 
+  };
 
   return (
     <>
       <div className={style.view}>
         <div className={style.content}>
-          <h3>Productos:</h3>
           <button className={style.buttonCreate} onClick={(event) => {handleCreate(event)}}>
             <i className="fa-solid fa-plus fa-sm"></i> Crear Producto
           </button>
+          <h3>Productos:</h3>
+          <p>Cantidad de productos: {productsQuantity}</p>
+          <p>Último producto registrado: {getLastProduct() ? getLastProduct().name : 'N/A'}</p>
+
           <table className={style.productTable}>
             <thead>
               <tr>
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Talles</th>
-                <th>Cantidad</th>
                 <th>Descripción</th>
                 <th>Editar</th>
                 <th>Borrar</th>
@@ -121,7 +140,6 @@ const Admin = () => {
                     <td>{product.name}</td>
                     <td>{product.price}</td>
                     <td>{product.sizes}</td>
-                    <td>{product.quantity}</td>
                     <td>{product.description}</td>
                     <td>
                       <button
@@ -174,6 +192,8 @@ const Admin = () => {
         )}
         <div className={style.content}>
           <h3>Usuarios:</h3>
+          <p>Cantidad de usuarios registrados: {usersQuantity}</p>
+          <p>Último usuario registrado: {getLastUser() ? `${getLastUser().firstName} ${getLastUser().lastName}` : 'N/A'}</p>
           <table className={style.productTable}>
             <thead>
               <tr>

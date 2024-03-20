@@ -21,7 +21,7 @@ const Login = () => {
     event.preventDefault();
     try {
         await axios.post(`http://localhost:3000/users/login`, form);
-        navigate("/");
+        navigate("/profile");
 
     } catch (error) {
         console.log(error);

@@ -23,6 +23,7 @@ app.use(checkLoggedInWithCookie);
 app.use(cors());
 const routesIndex = require("./routes/index");
 const usersRoutes = require("./routes/users");
+const categoryRoutes = require("./routes/categories");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -36,6 +37,8 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use("/", routesIndex);
 app.use("/users", usersRoutes);
+app.use("/categories", categoryRoutes);
+
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en el puerto ${port}`);

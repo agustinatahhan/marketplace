@@ -69,7 +69,7 @@
   margin: 3rem 0;
 }
 
-.carrousel-list {
+.carrouselList {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +86,7 @@
   color: rgb(0, 0, 0);
 }
 
-.carrousel-track {
+.carrouselTrack {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
