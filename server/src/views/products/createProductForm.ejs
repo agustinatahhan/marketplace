@@ -16,8 +16,12 @@
               name="name"
               id="name"
               placeholder="Nombre del producto"
-              required
+              value="<%= locals.old && old.name ? old.name : '' %>"
             />
+            <!-- Mostrar errores específicos para el campo nombre -->
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[0].msg %></span>
+          <% } %>
           </div>
           <div>
             <input
@@ -26,8 +30,12 @@
               name="description"
               id="description"
               placeholder="Descripción del producto"
-              required
+              value="<%= locals.old && old.descripcion ? old.descripcion : '' %>"
             />
+              <!-- Mostrar errores específicos para el campo descripcion -->
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[2].msg %></span>
+          <% } %>
           </div>
           <div>
             <input
@@ -37,8 +45,12 @@
               id="price"
               min="1"
               placeholder="Precio"
-              required
+              value="<%= locals.old && old.price ? old.price : '' %>"
             />
+              <!-- Mostrar errores específicos para el campo precio -->
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[1].msg %></span>
+          <% } %>
           </div>
           <div>
             <input
@@ -49,28 +61,33 @@
               min="1"
               max="10"
               placeholder="Cantidad"
-              required
+              value="<%= locals.old && old.quantity ? old.quantity : '' %>"
             />
+              <!-- Mostrar errores específicos para el campo cantidad -->
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[3].msg %></span>
+          <% } %>
           </div>
           <div>
-            <label><input type="checkbox" name="sizes[]" value="S"> S</label>
-            <label><input type="checkbox" name="sizes[]" value="M"> M</label>
-            <label><input type="checkbox" name="sizes[]" value="L"> L</label>
-            <label><input type="checkbox" name="sizes[]" value="XL"> XL</label>
+            <label><input type="checkbox" name="sizes[]" value="S" <% if (locals.old && locals.old.sizes && locals.old.sizes.includes('S')) { %> checked <% } %>> S</label>
+            <label><input type="checkbox" name="sizes[]" value="M" <% if (locals.old && locals.old.sizes && locals.old.sizes.includes('M')) { %> checked <% } %>> M</label>
+            <label><input type="checkbox" name="sizes[]" value="L" <% if (locals.old && locals.old.sizes && locals.old.sizes.includes('L')) { %> checked <% } %>> L</label>
+            <label><input type="checkbox" name="sizes[]" value="XL" <% if (locals.old && locals.old.sizes && locals.old.sizes.includes('XL')) { %> checked <% } %>> XL</label>
+
+              <!-- Mostrar errores específicos para el campo talles -->
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[4].msg %></span>
+          <% } %>
           </div>
-          <!-- <div>
-            <select name="category" id="category" class="ctrl">
-              <option value="" disabled selected>Categoría</option>
-              <option value="blusas">Blusas</option>
-              <option value="abrigos">Abrigos</option>
-              <option value="pantalones">Pantalones</option>
-              <option value="vestidos">Vestidos</option>
-            </select>
-          </div> -->
+          
           <div class="imgProduct">
             <p>Imagen:</p>
-            <input type="file" name="img" id="img" required />
+            <input type="file" name="img" id="img"/>
           </div>
+              <!-- Mostrar errores específicos para el campo nombre -->
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[5].msg %></span>
+          <% } %>
 
           <div class="btnForm">
             <button type="reset">Borrar</button>

@@ -5,6 +5,8 @@
 // const listProductsJson = fs.readFileSync(pathProducts, "utf-8");
 // const listProducts = JSON.parse(listProductsJson);
 const db = require("../../database/models");
+const { validationResult } = require("express-validator");
+
 
 const controller = {
   index: async (req, res) => {
@@ -50,26 +52,35 @@ const controller = {
 
   postProduct: async (req, res) => {
     try {
-      const { name, price, description, sizes, quantity } = req.body;
-      if (!name || !price || !description || !quantity) {
-        return res.status(400).send("Todos los campos son obligatorios");
-      }
-  
-      const newProduct = await db.Product.create({
-        name,
-        price,
-        description,
-        quantity,
-        img: req.file.filename || "default.png", 
-        sizes: sizes || [],
-      });
-  
-      res.redirect(`/`);
+        const { name, price, description, sizes, quantity } = req.body;
+        
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let imgFileName = "default.png";
+            if(req.file && req.file.filename) {
+                imgFileName = req.file.filename;
+            }
+
+            const newProduct = await db.Product.create({
+                name,
+                price,
+                description,
+                quantity,
+                img: imgFileName,
+                sizes: sizes || [],
+            });
+
+            res.redirect(`/`);
+        } else {
+            res.render("products/createProductForm", { errors: errors.array(), old: req.body});
+        }
     } catch (error) {
-      console.error("Error al crear el producto:", error);
-      res.status(500).send("Internal Server Error");
+        console.error("Error al crear el producto:", error);
+        res.status(500).send("Internal Server Error");
     }
-  },
+}
+,
   
 
   getEditForm: async (req, res) => {
