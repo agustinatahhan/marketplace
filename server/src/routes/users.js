@@ -39,7 +39,7 @@ const {
 const validations = [
   body("firstName").notEmpty().withMessage("Tienes que escribir el nombre"),
   body("lastName").notEmpty().withMessage("Tienes que escribir el apellido"),
-  body("email").notEmpty().withMessage("Tienes que escribir un email"),
+  body("email").isEmail().withMessage("Tienes que escribir un email"),
   //.notEmpty().withMessage('Tienes que escribir un email').bail(),
   // .isEmail().withMessage('Debes escribir un formato de correo valido'),
 
@@ -60,8 +60,13 @@ const validations = [
   //   }
 ];
 
+const validationslogin = [
+  body("email").isEmail().withMessage("Tienes que escribir un email"),
+  body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
+];
+
 router.get("/login", login);
-router.post("/login", processLogin);
+router.post("/login", validationslogin,processLogin);
 
 router.post(
   "/register",

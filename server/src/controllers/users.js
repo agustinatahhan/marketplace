@@ -3,6 +3,7 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../../database/models");
+const { error } = require("console");
 // const usersPath = path.join(__dirname, "../data/user.json");
 // const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 
@@ -12,7 +13,12 @@ module.exports = {
   },
    processLogin : async (req, res) => {
     try {
-      const { email, password , rememberme } = req.body;
+
+      let errors = validationResult(req);
+
+      if(errors.isEmpty()){
+
+        const { email, password , rememberme } = req.body;
   
       const userFound = await db.User.findOne({
         where: { email: email },
@@ -35,6 +41,12 @@ module.exports = {
         }
       }
         return res.status(401).json({ success: false, message: "Credenciales inválidas" });
+        
+      }else{
+        res.render("users/login.ejs", { errors: errors.array()});
+      }
+
+      
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: "Error del servidor" });

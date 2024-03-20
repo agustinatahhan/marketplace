@@ -2,12 +2,16 @@
 <html lang="en">
   <%- include("../partials/head.ejs") %>
 
+
   <body>
     <%- include("../partials/header.ejs") %>
 
     <main align="center" class="main-content">
       <section class="form-register">
         <p>INICIAR SESIÓN</p>
+        
+        <!-- errores -->
+
         
         <form method="POST" action="/users/login">
           <input
@@ -16,16 +20,23 @@
             id="email"
             name="email"
             placeholder="Email"
-            required
           />
+          <!-- Mostrar errores específicos para el campo de email -->
+          <% if (locals.errors) { %>
+                <span class="error-msg2"><%= errors[0].msg %></span>
+          <% } %>
           <input
             class="ctrl"
             type="password"
             id="password"
             name="password"
             placeholder="Contraseña"
-            required
           />
+
+          <% if (locals.errors) { %>
+            <span class="error-msg2"><%= errors[1].msg %></span>
+          <% } %>
+
           <div>
             <input type="checkbox" name="rememberme" id="rememberme">
             <label for="rememberme">Recordar mi sesión</label>

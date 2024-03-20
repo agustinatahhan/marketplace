@@ -24,6 +24,17 @@
     margin-top: 5px; /* Añadir espacio encima del mensaje de error */
   }
 
+  .error-msg2 {
+    display: block;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #f00;
+    background-color: #ffe5e5;
+    color: #f00;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
   .is-invalid {
     border: 1px solid red; /* Borde rojo */
   }
