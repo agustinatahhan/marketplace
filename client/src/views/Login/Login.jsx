@@ -2,36 +2,58 @@ import style from "./Login.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+
 const Login = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleChange = (event) => {
     setForm({
-        ...form,
-        [event.target.name] : event.target.value
-    })    
-
+      ...form,
+      [event.target.name]: event.target.value
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
+    // Validar que el campo de correo electrónico no esté vacío
+    if (!form.email) {
+      setEmailError("Por favor, ingresa tu correo electrónico.");
+    } else {
+      setEmailError("");
+    }
+
+    // Validar que el campo de contraseña no esté vacío
+    if (!form.password) {
+      setPasswordError("Por favor, ingresa tu contraseña.");
+    } else {
+      setPasswordError("");
+    }
+
+    // Si alguno de los campos está vacío, detener el envío del formulario
+    if (!form.email || !form.password) {
+      return;
+    }
+
     try {
       const response = await axios.post(`http://localhost:3000/users/login`, form);
-      const { success, userId } = response.data;
+      const { success, userId, message } = response.data;
       if (success) {
         navigate(`/users/${userId}`);
       } else {
-        console.log("No puedes entrar");
+        // Manejar el mensaje de error general aquí si es necesario
       }
     } catch (error) {
+      alert("Credenciales inválidas. Por favor, inténtalo de nuevo.");
       console.log(error);
     }
   };
-  
 
   return (
     <div className={style.mainContent}>
@@ -46,8 +68,8 @@ const Login = () => {
             name="email"
             placeholder="Email"
             onChange={(event) => handleChange(event)}
-            required
           />
+          {emailError && <p className={style.errorMsg}>{emailError}</p>}
           <input
             className={style.ctrl}
             type="password"
@@ -55,8 +77,8 @@ const Login = () => {
             name="password"
             placeholder="Contraseña"
             onChange={(event) => handleChange(event)}
-            required
           />
+          {passwordError && <p className={style.errorMsg}>{passwordError}</p>}
           <div>
             <input type="checkbox" name="rememberme" id="rememberme" />
             <label>Recordar mi sesión</label>

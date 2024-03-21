@@ -38,6 +38,9 @@ const UserDashboard = () => {
           <p>
             Email: <span className={style.email}>{user.email}</span>
           </p>
+          <p>
+            Tipo de Usuario: {user.client ? "Cliente" : "Administrador"}
+          </p>
         </div>
       </div>
       <img src="" alt="" />
