@@ -10,7 +10,7 @@ const CreateProduct = ({ handleClose, setShowCreate, setShowBackdropCreate }) =>
       name: "",
       description: "",
       price: 0, 
-      quantity: 0, 
+      quantity: 1, 
       sizes: [], 
       img: null, 
       category: "",
@@ -50,6 +50,7 @@ const CreateProduct = ({ handleClose, setShowCreate, setShowBackdropCreate }) =>
         formData.append("sizes", JSON.stringify(form.sizes));
         formData.append("img", form.img);
         formData.append("category", form.category);
+
         await axios.post(`http://localhost:3000/create`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -63,7 +64,7 @@ const CreateProduct = ({ handleClose, setShowCreate, setShowBackdropCreate }) =>
         console.error("Error al crear el producto:", error);
       }
     };
-
+    
     return (
       <div>
         <form className={style.formContainer} onSubmit={handleSubmit}>
@@ -117,7 +118,7 @@ const CreateProduct = ({ handleClose, setShowCreate, setShowBackdropCreate }) =>
                 required
               />
             </div>
-            <div>
+            {/* <div>
               <input
                 className={style.ctrl}
                 type="number"
@@ -129,7 +130,7 @@ const CreateProduct = ({ handleClose, setShowCreate, setShowBackdropCreate }) =>
                 onChange={handleChange}
                 required
               />
-            </div>
+            </div> */}
             <div>
               {['S', 'M', 'L', 'XL'].map((size) => (
                 <label key={size}>
