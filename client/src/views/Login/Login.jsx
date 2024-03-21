@@ -1,37 +1,60 @@
 import style from "./Login.module.css";
-import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-const Login = () => {
+
+const Login = ({ setSession }) => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleChange = (event) => {
     setForm({
-        ...form,
-        [event.target.name] : event.target.value
-    })    
-
+      ...form,
+      [event.target.name]: event.target.value
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
+    // Validar que el campo de correo electrónico no esté vacío
+    if (!form.email) {
+      setEmailError("Por favor, ingresa tu correo electrónico.");
+      return;
+    } else {
+      setEmailError("");
+    }
+
+    // Validar que el campo de contraseña no esté vacío
+    if (!form.password) {
+      setPasswordError("Por favor, ingresa tu contraseña.");
+      return;
+    } else {
+      setPasswordError("");
+    }
+
     try {
       const response = await axios.post(`http://localhost:3000/users/login`, form);
-      const { success, userId } = response.data;
+      const { success, userId, message, sessionData } = response.data;
       if (success) {
+        // Almacenar los datos de la sesión en el estado o contexto de la aplicación
+        setSession(sessionData);
+
+        // Redireccionar a la página de perfil del usuario
         navigate(`/users/${userId}`);
       } else {
-        console.log("No puedes entrar");
+        // Manejar el mensaje de error general aquí si es necesario
       }
     } catch (error) {
+      alert("Credenciales inválidas. Por favor, inténtalo de nuevo.");
       console.log(error);
     }
   };
-  
 
   return (
     <div className={style.mainContent}>
@@ -45,18 +68,20 @@ const Login = () => {
             id="email"
             name="email"
             placeholder="Email"
+            value={form.email}
             onChange={(event) => handleChange(event)}
-            required
           />
+          {emailError && <p className={style.errorMsg}>{emailError}</p>}
           <input
             className={style.ctrl}
             type="password"
             id="password"
             name="password"
             placeholder="Contraseña"
+            value={form.password}
             onChange={(event) => handleChange(event)}
-            required
           />
+          {passwordError && <p className={style.errorMsg}>{passwordError}</p>}
           <div>
             <input type="checkbox" name="rememberme" id="rememberme" />
             <label>Recordar mi sesión</label>
@@ -84,3 +109,4 @@ const Login = () => {
 };
 
 export default Login;
+

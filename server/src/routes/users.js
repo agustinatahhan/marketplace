@@ -66,12 +66,11 @@ const validationslogin = [
 ];
 
 router.get("/login", login);
-router.post("/login", validationslogin,processLogin);
+router.post("/login",processLogin);
 
 router.post(
   "/register",
   uploadFile.single("image"),
-  validations,
   processRegister
 );
 

@@ -73,3 +73,8 @@
       height: fit-content;
     }
   }
+
+  .errorMsg{
+    color: rgb(153, 2, 2);
+  }
+  

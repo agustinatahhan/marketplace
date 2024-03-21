@@ -12,6 +12,7 @@ const Register = () => {
     password: "",
     img: null,
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     setForm({
@@ -22,6 +23,29 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Validar campos antes de enviar el formulario
+    const errors = {};
+    if (!form.firstName) {
+      errors.firstName = "Por favor, ingresa tu nombre.";
+    }
+    if (!form.lastName) {
+      errors.lastName = "Por favor, ingresa tu apellido.";
+    }
+    if (!form.email) {
+      errors.email = "Por favor, ingresa tu correo electrónico.";
+    }
+    if (!form.password) {
+      errors.password = "Por favor, ingresa tu contraseña.";
+    }
+    // Validar otros campos según sea necesario
+
+    // Si hay errores, actualizar el estado y detener el envío del formulario
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append("firstName", form.firstName);
@@ -53,8 +77,8 @@ const Register = () => {
             name="firstName"
             placeholder="Nombre"
             onChange={(event) => handleChange(event)}
-            required
           />
+          {errors.firstName && <p className={style.errorMsg}>{errors.firstName}</p>}
           <input
             className={style.ctrl}
             type="text"
@@ -62,8 +86,8 @@ const Register = () => {
             name="lastName"
             placeholder="Apellido"
             onChange={(event) => handleChange(event)}
-            required
           />
+          {errors.lastName && <p className={style.errorMsg}>{errors.lastName}</p>}
           <input
             className={style.ctrl}
             type="email"
@@ -71,8 +95,8 @@ const Register = () => {
             name="email"
             placeholder="Email"
             onChange={(event) => handleChange(event)}
-            required
           />
+          {errors.email && <p className={style.errorMsg}>{errors.email}</p>}
           <input
             className={style.ctrl}
             type="password"
@@ -80,8 +104,8 @@ const Register = () => {
             name="password"
             placeholder="Contraseña"
             onChange={(event) => handleChange(event)}
-            required
           />
+          {errors.password && <p className={style.errorMsg}>{errors.password}</p>}
           <div>
             <p>Imagen:</p>
             <input type="file" name="img" id="img" onChange={handleChange} />
@@ -99,3 +123,4 @@ const Register = () => {
 };
 
 export default Register;
+
