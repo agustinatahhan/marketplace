@@ -26,6 +26,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      img: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       client: {
         type: Sequelize.BOOLEAN,
         defaultValue: true,

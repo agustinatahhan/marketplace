@@ -25,15 +25,20 @@ const UserDashboard = () => {
     <main className={style.mainContent}>
       <h2>Bienvenido a Moda Mía</h2>
       <div className={style.profileBox}>
-        <p>
-          Usuario:{" "}
-          <span>
-            {user.firstName} {user.lastName}
-          </span>
-        </p>
-        <p>
-          Email: <span className={style.email}>{user.email}</span>
-        </p>
+        <div className={style.imgContainer}>
+          <img src={`http://localhost:3000/img/${user.img}`} alt="User image" />
+        </div>
+        <div>
+          <p>
+            Usuario:{" "}
+            <span>
+              {user.firstName} {user.lastName}
+            </span>
+          </p>
+          <p>
+            Email: <span className={style.email}>{user.email}</span>
+          </p>
+        </div>
       </div>
       <img src="" alt="" />
     </main>

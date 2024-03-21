@@ -95,7 +95,7 @@ module.exports = {
       let userToCreate = {
         ...req.body,
         password: bcryptjs.hashSync(req.body.password, 10),
-        // image: req.file.filename,
+        img: req.file ? req.file.filename : "default.png",
       };
   
       await db.User.create(userToCreate);

@@ -10,24 +10,33 @@ const Register = () => {
     lastName: "",
     email: "",
     password: "",
+    img: null,
   });
 
   const handleChange = (event) => {
     setForm({
-        ...form,
-        [event.target.name] : event.target.value
-    })    
-
+      ...form,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        await axios.post(`http://localhost:3000/users/register`, form);
-        navigate("/login");
-
+      const formData = new FormData();
+      formData.append("firstName", form.firstName);
+      formData.append("lastName", form.lastName);
+      formData.append("email", form.email);
+      formData.append("password", form.password);
+      formData.append("img", form.img);
+      await axios.post(`http://localhost:3000/users/register`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      navigate("/login");
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   };
 
@@ -73,6 +82,10 @@ const Register = () => {
             onChange={(event) => handleChange(event)}
             required
           />
+          <div>
+            <p>Imagen:</p>
+            <input type="file" name="img" id="img" onChange={handleChange} />
+          </div>
           <button className={style.btn} type="submit">
             Registrate
           </button>
