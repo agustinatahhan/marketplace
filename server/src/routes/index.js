@@ -24,7 +24,7 @@ router.get('/login', indexController.login);
 router.get('/register', indexController.register);
 router.get('/cart', indexController.cart);
 // router.get('/detail', indexController.detail);
-router.get('/products/detail/:id',isLoggedIn ,indexController.detail);
+router.get('/products/detail/:id', indexController.detail);
 
 
 

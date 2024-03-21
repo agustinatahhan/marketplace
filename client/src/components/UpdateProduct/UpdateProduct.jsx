@@ -15,6 +15,8 @@ const UpdateProduct = ({
     sizes: product?.sizes || [],
     description: product?.description || "",
     quantity: product?.quantity || 0,
+    img: product?.img || "",
+
   });
 
   useEffect(() => {
@@ -24,6 +26,8 @@ const UpdateProduct = ({
       sizes: product?.sizes || [],
       description: product?.description || "",
       quantity: product?.quantity || 0,
+      img: product?.img || "",
+
     });
   }, [product]);
 
@@ -119,11 +123,11 @@ const UpdateProduct = ({
           </div>
           <div>
             <p>Imagen:</p>
-            {/* <img
+            <img
               alt="Imagen actual del producto"
               width="100px"
-              src={`/img/${product.img}`}
-            /> */}
+              src={`http://localhost:3000/img/${form.img}`}
+            />
             <input type="file" name="img" id="img" />
           </div>
           <div className={style.btnContainer}>

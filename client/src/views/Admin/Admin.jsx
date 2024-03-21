@@ -138,7 +138,7 @@ const Admin = () => {
                 currentProducts?.map((product) => (
                   <tr key={product.id}>
                     <td>{product.name}</td>
-                    <td>{product.price}</td>
+                    <td>${product.price}</td>
                     <td>{product.sizes}</td>
                     <td>{product.description}</td>
                     <td>

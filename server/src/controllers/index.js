@@ -44,26 +44,21 @@ const controller = {
 
   detail: async (req, res) => {
     const { id } = req.params;
-
     try {
-      // const product = listProducts.find((p) => p.id === productId);
-      // console.log("Product found:", Array.isArray(product.sizes) );
-      // if (product) {
-      //   res.render("products/productDetail", { product });
-      // } else {
-      //   res.status(404).send("Product not found");
-      // }
       const product = await db.Product.findOne({
-        where: {
-          id: id,
-        },
+        where: { id },
       });
-      return res.status(200).json(product);
+      if (product) {
+        res.status(200).json(product);
+      } else {
+        res.status(404).send("Product not found");
+      }
     } catch (error) {
       console.error("Error fetching product details:", error);
       res.status(500).send("Internal Server Error");
     }
   },
+  
 
   getFormProduct: (req, res) => res.render("products/createProductForm"),
   postProduct: async (req, res) => {

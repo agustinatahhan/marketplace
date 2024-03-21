@@ -6,23 +6,23 @@ import style from "./Detail.module.css";
 const Detail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const getProductDetail = async (id) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/products/detail/${id}`
+      );
+      setProduct(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error al obtener los detalles del producto:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:3000/products/detail/${id}`
-        );
-        setProduct(response.data);
-      } catch (error) {
-        console.error("Error al obtener los detalles del producto:", error);
-      }
-    };
-
-    fetchProduct();
+    getProductDetail(id);
   }, [id]);
 
-  const sizesArray = product ? JSON.parse(product.sizes) : [];
+  // const filteredSizes = product ? product.sizes.filter((value) => value !== "" && value !== "[]" && value !== "\"\"" && value !== "\\\"") : [];
 
   if (!product) {
     return <div>Cargando...</div>;
@@ -32,12 +32,17 @@ const Detail = () => {
     <div className={style.mainContent}>
       <div className={style.columnas}>
         <div className={style.columna}>
-        <img className={style.imgDetalle} src={`http://localhost:3000/img/${product.img}`} alt={product.name} />        </div>
+          <img
+            className={style.imgDetalle}
+            src={`http://localhost:3000/img/${product.img}`}
+            alt={product.name}
+          />{" "}
+        </div>
         <div className={style.columna}>
           <div className={style.contenedorOpciones}>
             <div className={style.formOpciones}>
               <h4 className={style.tituloProducto}>{product.name}</h4>
-              <h4 className={style.price}>{product.price}</h4>
+              <h4 className={style.price}>${product.price}</h4>
               <div className={style.cant}>
                 <h4>Cantidad:</h4>
                 <input
@@ -47,17 +52,8 @@ const Detail = () => {
                   placeholder="1"
                 />
               </div>
-              <div className="tallesContenedor">
-                {Array.isArray(sizesArray) && sizesArray.length > 0 && (
-                  <>
-                    <h4>Talles:</h4>
-                    {sizesArray.map((size, index) => (
-                      <div className="talleBox" key={index}>
-                        <h4>{size}</h4>
-                      </div>
-                    ))}
-                  </>
-                )}
+              <div className={style.tallesContenedor}>
+                <h4>Talles:</h4>
               </div>
               <div className={style.promocionesBancarias}>
                 <h4>

@@ -48,6 +48,7 @@
     align-items: start;
     justify-content: start;
     gap: 1.5rem;
+    width: 80%;
   }
   
   .tituloProducto{

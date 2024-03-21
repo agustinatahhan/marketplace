@@ -75,7 +75,7 @@ router.post(
   processRegister
 );
 
-router.get("/profile",isLoggedIn ,profile);
+router.get("/:id", profile);
 router.get('/', getAllUsers);
 
 module.exports = router;

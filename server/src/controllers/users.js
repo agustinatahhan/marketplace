@@ -13,40 +13,34 @@ module.exports = {
   },
    processLogin : async (req, res) => {
     try {
-
       let errors = validationResult(req);
-
-      if(errors.isEmpty()){
-
-        const { email, password , rememberme } = req.body;
   
-      const userFound = await db.User.findOne({
-        where: { email: email },
-      });
+      if (errors.isEmpty()) {
+        const { email, password, rememberme } = req.body;
   
-      if (userFound) {
-        const passwordMatch = bcryptjs.compareSync(password, userFound.password);
+        const userFound = await db.User.findOne({
+          where: { email: email },
+        });
   
-        if (passwordMatch) {
-          req.session.userId = userFound.id;
-          req.session.name = userFound.firstName;
-          req.session.client = userFound.client;
-
-          // Si se ha marcado "Recordar mi sesión", configurar una cookie que expire en 7 días
-        if (rememberme) {
-          res.cookie('userId', userFound.id, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
+        if (userFound) {
+          const passwordMatch = bcryptjs.compareSync(password, userFound.password);
+  
+          if (passwordMatch) {
+            req.session.userId = userFound.id;
+            req.session.name = userFound.firstName;
+            req.session.client = userFound.client;
+  
+            if (rememberme) {
+              res.cookie('userId', userFound.id, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
+            }
+  
+            return res.status(200).json({ success: true, message: "Inicio de sesión exitoso", userId: userFound.id });
+          }
         }
-
-            return res.status(200).json({ success: true, message: "Inicio de sesión exitoso" });
-        }
-      }
         return res.status(401).json({ success: false, message: "Credenciales inválidas" });
-        
-      }else{
-        res.render("users/login.ejs", { errors: errors.array()});
+      } else {
+        res.render("users/login.ejs", { errors: errors.array() });
       }
-
-      
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: "Error del servidor" });
@@ -54,8 +48,24 @@ module.exports = {
   },
   
 
-  profile: (req, res) => {
-    res.render("users/profile.ejs", { user: req.session.userLogged });
+  // profile: (req, res) => {
+  //   res.render("users/profile.ejs", { user: req.session.userLogged });
+  // },
+  profile: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const user = await db.User.findOne({
+        where: { id },
+      });
+      if (user) {
+        res.status(200).json(user);
+      } else {
+        res.status(404).send("User not found");
+      }
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Error del servidor" });
+    }
   },
 
   processRegister: async (req, res) => {

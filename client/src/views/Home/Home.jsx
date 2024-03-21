@@ -1,5 +1,5 @@
 import style from "./Home.module.css";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import axios from "axios";
 import slider1 from "../../../../server/src/public/img/slider1.jpg";
 import slider2 from "../../../../server/src/public/img/slider2.jpg";
@@ -8,7 +8,7 @@ import slider4 from "../../../../server/src/public/img/slider4.jpg";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
-    const [listProducts, setListProducts] = useState([]);
+  const [listProducts, setListProducts] = useState([]);
 
   useEffect(() => {
     fetchProducts();
@@ -16,10 +16,10 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/');
+      const response = await axios.get("http://localhost:3000/");
       setListProducts(response.data);
     } catch (error) {
-      console.error('Error al obtener los productos:', error);
+      console.error("Error al obtener los productos:", error);
     }
   };
 
@@ -35,7 +35,7 @@ const Home = () => {
   //     console.log('Error al eliminar el producto:', error);
   //   }
   // };
-  
+
   // // const editProduct = async (id) => {
   // //   try {
   // //     const updated = await axios.put(`http://localhost:3000/edit/${id}`);
@@ -67,12 +67,16 @@ const Home = () => {
         <div className={style.mainCarrousel}>
           <div className={style.carrouselList}>
             <div className={style.carrouselTrack}>
-            {Array.isArray(listProducts) ? (
-                listProducts.map(product => (
+              {Array.isArray(listProducts) ? (
+                listProducts.map((product) => (
                   <div className={style.carrousel} key={product.id}>
                     <div>
                       <NavLink to={`/products/detail/${product.id}`}>
-                      <img src={`http://localhost:3000/img/${product.img}`} alt={product.name} />                        <h4>{product.name}</h4>
+                        <img
+                          src={`http://localhost:3000/img/${product.img}`}
+                          alt={product.name}
+                        />{" "}
+                        <h4>{product.name}</h4>
                         <h6>${product.price}</h6>
                       </NavLink>
                     </div>

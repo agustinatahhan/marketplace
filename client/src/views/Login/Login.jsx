@@ -20,13 +20,18 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        await axios.post(`http://localhost:3000/users/login`, form);
-        navigate("/profile");
-
+      const response = await axios.post(`http://localhost:3000/users/login`, form);
+      const { success, userId } = response.data;
+      if (success) {
+        navigate(`/users/${userId}`);
+      } else {
+        console.log("No puedes entrar");
+      }
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   };
+  
 
   return (
     <div className={style.mainContent}>

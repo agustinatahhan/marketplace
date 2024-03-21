@@ -38,7 +38,6 @@ const CreateProduct = ({ handleClose, setShowCreate, setShowBackdropCreate }) =>
         ...prevForm,
         [name]: name === "category" ? parseInt(value) : newValue, 
       }));
-      console.log(form);
     };
     const handleSubmit = async (event) => {
       event.preventDefault();

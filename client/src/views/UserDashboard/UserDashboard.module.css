@@ -1,0 +1,30 @@
+
+span{
+    font-weight: 200;
+    text-transform: capitalize;
+  }
+  
+  .email{
+    font-weight: 200;
+    text-transform: none;
+  }
+  
+  .profileBox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: .7rem;
+    
+  }
+  
+  .mainContent {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
+  
+  .mainContent h2{
+    text-align: center;
+  }
