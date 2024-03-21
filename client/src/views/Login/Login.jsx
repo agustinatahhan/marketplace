@@ -1,8 +1,7 @@
 import style from "./Login.module.css";
-import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-
 const Login = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -21,30 +20,14 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    // Validar que el campo de correo electrónico no esté vacío
-    if (!form.email) {
-      setEmailError("Por favor, ingresa tu correo electrónico.");
-    } else {
-      setEmailError("");
-    }
-
-    // Validar que el campo de contraseña no esté vacío
-    if (!form.password) {
-      setPasswordError("Por favor, ingresa tu contraseña.");
-    } else {
-      setPasswordError("");
-    }
-
-    // Si alguno de los campos está vacío, detener el envío del formulario
-    if (!form.email || !form.password) {
-      return;
-    }
-
     try {
       const response = await axios.post(`http://localhost:3000/users/login`, form);
-      const { success, userId, message } = response.data;
+      const { success, userId } = response.data;
       if (success) {
+        // Almacenar los datos de la sesión en el estado o contexto de la aplicación
+        setSession(sessionData);
+
+        // Redireccionar a la página de perfil del usuario
         navigate(`/users/${userId}`);
       } else {
         // Manejar el mensaje de error general aquí si es necesario
@@ -67,6 +50,7 @@ const Login = () => {
             id="email"
             name="email"
             placeholder="Email"
+            value={form.email}
             onChange={(event) => handleChange(event)}
           />
           {emailError && <p className={style.errorMsg}>{emailError}</p>}
@@ -76,6 +60,7 @@ const Login = () => {
             id="password"
             name="password"
             placeholder="Contraseña"
+            value={form.password}
             onChange={(event) => handleChange(event)}
           />
           {passwordError && <p className={style.errorMsg}>{passwordError}</p>}
@@ -106,3 +91,4 @@ const Login = () => {
 };
 
 export default Login;
+
